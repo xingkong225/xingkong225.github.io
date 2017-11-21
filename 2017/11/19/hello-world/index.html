@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="布局,html,css," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="我查了好多关于Flex布局的内容，现在总结一下。 借鉴阮一峰的网络日志 (http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 的文档 Flex布局适用于移动端的开发，能够很好的做到响应式。 Flex布局即为弹性布局，任何元素都可以设定display: bl">
+<meta name="keywords" content="布局,html,css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="移动端的经典布局---Flex">
 <meta property="og:url" content="http://yoursite.com/2017/11/19/hello-world/index.html">
 <meta property="og:site_name" content="Hello,world!">
+<meta property="og:description" content="我查了好多关于Flex布局的内容，现在总结一下。 借鉴阮一峰的网络日志 (http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 的文档 Flex布局适用于移动端的开发，能够很好的做到响应式。 Flex布局即为弹性布局，任何元素都可以设定display: block;或者display: inline-block，设定为flex布局之后，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-19T06:54:14.014Z">
+<meta property="og:updated_time" content="2017-11-19T18:00:13.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
+<meta name="twitter:title" content="移动端的经典布局---Flex">
+<meta name="twitter:description" content="我查了好多关于Flex布局的内容，现在总结一下。 借鉴阮一峰的网络日志 (http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 的文档 Flex布局适用于移动端的开发，能够很好的做到响应式。 Flex布局即为弹性布局，任何元素都可以设定display: block;或者display: inline-block，设定为flex布局之后，">
 
 
 
@@ -122,7 +126,7 @@
 
 
 
-  <title>Hello World | Hello,world!</title>
+  <title>移动端的经典布局---Flex | Hello,world!</title>
   
 
 
@@ -276,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">移动端的经典布局---Flex</h1>
         
 
         <div class="post-meta">
@@ -299,6 +303,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">前端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -309,6 +335,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -326,7 +383,30 @@
       
 
       
-        
+        <p>我查了好多关于Flex布局的内容，现在总结一下。</p>
+<p>借鉴阮一峰的网络日志 (<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>) 的文档</p>
+<p>Flex布局适用于移动端的开发，能够很好的做到响应式。</p>
+<p>Flex布局即为弹性布局，任何元素都可以设定<code>display: block;</code>或者<code>display: inline-block</code>，设定为flex布局之后，子元素的float等属性将消失。</p>
+<p>采用flex的元素称为<strong>容器</strong>，其子元素称为<strong>项目</strong>，容器有两根轴，水平的主轴和垂直的交叉轴，主轴有main start和main end，交叉轴有cross start和cross end。项目默认按主轴排列，单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<p>容器的属性：</p>
+<ul>
+<li>flex-directon———主轴的方向</li>
+<li>flex-wrap———如果一条线排不下，如何换行</li>
+<li>flex-flow———是上面两个属性的简写形式</li>
+<li>justify-content———项目在主轴上的对齐方式</li>
+<li>align-item———项目在交叉轴上的对齐方式</li>
+<li>align-content———项目在多根轴线上的对齐方式，如果只有一根轴线，则不起作用</li>
+</ul>
+<p>项目的属性：</p>
+<ul>
+<li>order———定义项目的排列顺序，数值越小越靠前，默认为0</li>
+<li>flex-grow———定义项目的放大比例，默认为0，空间有剩余，也不放大</li>
+<li>flex-shrink———定义项目的缩小比例，默认为1，空间不足，则会缩小</li>
+<li>flex-basis———</li>
+<li>flex———上面三个的简写</li>
+<li>align-self———</li>
+</ul>
+
       
     </div>
     
@@ -340,6 +420,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/布局/" rel="tag"># 布局</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
       
 
       
@@ -359,6 +449,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/20/mongodb数据库/" rel="prev" title="mongodb数据库">
+                mongodb数据库 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -430,7 +524,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -441,7 +535,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -452,7 +546,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -463,6 +557,14 @@
           
 
           <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xingkong225" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
             
           </div>
 
@@ -507,6 +609,10 @@
 
 
 
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.2k字</span>
+</div>
 
         
 

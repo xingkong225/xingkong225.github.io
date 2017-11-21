@@ -259,6 +259,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/mongodb数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liyx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello,world!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/mongodb数据库/" itemprop="url">mongodb数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T11:50:40+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  390
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>mongod —dbpath 路径开启数据库，如果数据库不存在则会创建</p>
+<p>mongo连接数据库</p>
+<p>show dbs 看一下目前有几个数据库，默认是admin和local两个数据库</p>
+<p>use 名字 可以新建一个数据库，但是如果这个数据库已经存在了，就会进入到这个数据库，例如use test，里面必须有内容，才会在show dbs显示出来</p>
+<p>show collections</p>
+<p>必须使用use test连接之后，db.user.insert({‘’:’’,’’:’’})</p>
+<p>db.user.find()可以查出现在里面的内容是什么</p>
+<p>总结一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath dir  //打开或者新建一个数据库</span><br><span class="line"></span><br><span class="line">mongo:</span><br><span class="line"></span><br><span class="line">use dbname //新建一个库</span><br><span class="line"></span><br><span class="line">db.name.insert(&#123;&#125;) //插入数据</span><br><span class="line"></span><br><span class="line">db.name.find() //查找名字为name的文档</span><br><span class="line"></span><br><span class="line">show dbs 查看有几个库</span><br><span class="line"></span><br><span class="line">show collections 查看当前库所有集合</span><br></pre></td></tr></table></figure></p>
+<p>mongoimport —db test —collection user —drop —file dir</p>
+<p>—db导入到哪个库</p>
+<p>—collection导入到哪个集合</p>
+<p>—drop如果加上就表示将原有的数据清空</p>
+<p>—file 要导入的文件</p>
+<h3 id="关于查询的操作"><a href="#关于查询的操作" class="headerlink" title="关于查询的操作"></a>关于查询的操作</h3><p>db.name.find() //查询所有文档</p>
+<p>db.name.find({‘key’:’value’})</p>
+<p>db.name.find({‘key1’:’value1’,’key2’:’value2’})</p>
+<p>db.name.find({$or:[{‘key1’:’value1’},{‘key2’:’value2’}]})</p>
+<p>db.name.find(k:{$lt: v})</p>
+<p>db.name.find(k:{$gt: v})</p>
+<p>db.name.update(<br>    {k:v},<br>    {<br>      $set:{k2:v2,k3:v3}<br>    }<br>)</p>
+<p>db.name.update(<br>    {k:v},<br>    {<br>      k2:v2,<br>      k3:v3<br>    },<br>    {multi:true}<br>)<br>db.name.remove({k:v})//删除所有匹配到的文档</p>
+<p>db.name.remove({k:v},{justone:true})//删除第一个匹配的文档</p>
+<p>db.name.remove({})//删除全部集合</p>
+<p>db.name.drop()//删除集合</p>
+<p>db.dropDatebase() //删除当前所在的数据库</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -278,7 +475,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/19/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/11/19/hello-world/" itemprop="url">移动端的经典布局---Flex</a></h1>
         
 
         <div class="post-meta">
@@ -301,6 +498,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">前端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -311,6 +530,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -330,7 +580,30 @@
       
         
           
-            
+            <p>我查了好多关于Flex布局的内容，现在总结一下。</p>
+<p>借鉴阮一峰的网络日志 (<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>) 的文档</p>
+<p>Flex布局适用于移动端的开发，能够很好的做到响应式。</p>
+<p>Flex布局即为弹性布局，任何元素都可以设定<code>display: block;</code>或者<code>display: inline-block</code>，设定为flex布局之后，子元素的float等属性将消失。</p>
+<p>采用flex的元素称为<strong>容器</strong>，其子元素称为<strong>项目</strong>，容器有两根轴，水平的主轴和垂直的交叉轴，主轴有main start和main end，交叉轴有cross start和cross end。项目默认按主轴排列，单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<p>容器的属性：</p>
+<ul>
+<li>flex-directon———主轴的方向</li>
+<li>flex-wrap———如果一条线排不下，如何换行</li>
+<li>flex-flow———是上面两个属性的简写形式</li>
+<li>justify-content———项目在主轴上的对齐方式</li>
+<li>align-item———项目在交叉轴上的对齐方式</li>
+<li>align-content———项目在多根轴线上的对齐方式，如果只有一根轴线，则不起作用</li>
+</ul>
+<p>项目的属性：</p>
+<ul>
+<li>order———定义项目的排列顺序，数值越小越靠前，默认为0</li>
+<li>flex-grow———定义项目的放大比例，默认为0，空间有剩余，也不放大</li>
+<li>flex-shrink———定义项目的缩小比例，默认为1，空间不足，则会缩小</li>
+<li>flex-basis———</li>
+<li>flex———上面三个的简写</li>
+<li>align-self———</li>
+</ul>
+
           
         
       
@@ -453,6 +726,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  389
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -470,28 +774,14 @@
 
       
         
-          
-            <p>学习了这么多vue的教程，实际来做一个项目还是不知道如何上手，因此，我根据网上的饿了么实战视频教程来总结一下用到的知识，梳理一下我的思路。</p>
-<p><strong>首先</strong></p>
-<p>vue的脚手架帮助我们编写好一个基础的代码，使用到了vue-cli工具。</p>
-<p><code>npm install -g vue-cli</code> 可以全局的安装vue命令</p>
-<p><code>vue init &lt;template-name&gt; &lt;project-name&gt;</code> 是初始化一个项目，可以官方从事先设置好的项目里安装，也可以自定义的从自己的仓库里面安装，例如：<code>vue init webpack myDemo</code>便生成了一个myDemo的目录，以webpack打包工具为基础</p>
-<p><code>cd myDemo</code> 进入到myDemo文件里面</p>
-<p><code>npm install</code> 安装项目运行所需要的依赖</p>
-<p><code>npm run dev</code> 默认在8080端口就跑起来了你的项目</p>
-<hr>
-<p><strong>项目文件目录</strong></p>
-<p>build和config目录是有关于webpack的配置，node_modules目录是我们通过<code>npm install</code>安装的依赖代码库，src目录是我们用来存放项目的源码，也就是主要的工作区域，static目录是用来存放第三方静态资源。</p>
-<p>.babelrc是专门处理ES6的语法</p>
-<p>.editorconfig是对编辑器的设置</p>
-<p>.eslintignore用来忽略语法检查的目录文件</p>
-<p>.eslintlrc.js是eslint的配置文件</p>
-<p>.gitignore是git提交时会忽略掉的一些文件</p>
-<p>index.html是入口的html文件</p>
-<p>package.json项目的配置文件</p>
-<p>README.md项目的描述文件</p>
-
-          
+          <p>学习了这么多vue的教程，实际来做一个项目还是不知道如何上手，因此，我根据网上的饿了么实战视频教程来总结一下用到的知识，梳理一下我的思路。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/19/vuejs/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -612,6 +902,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,569
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
           
 
           
@@ -759,6 +1080,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  479
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -776,32 +1128,17 @@
 
       
         
-          
-            <h4 id="我们为什么要用webpack？"><a href="#我们为什么要用webpack？" class="headerlink" title="我们为什么要用webpack？"></a>我们为什么要用webpack？</h4><ul>
+          <h4 id="我们为什么要用webpack？"><a href="#我们为什么要用webpack？" class="headerlink" title="我们为什么要用webpack？"></a>我们为什么要用webpack？</h4><ul>
 <li>模块化</li>
 <li>优化加载的速度</li>
-<li>使用新的开发模式</li>
-</ul>
-<p>我们在做前端项目的时候，要写的东西非常多，代码会越来越复杂，不可能把他们放到一个文件里，因此有了模块化的概念。</p>
-<p><img src="./../img/webpack.jpg" alt=""></p>
-<h4 id="webpack特点："><a href="#webpack特点：" class="headerlink" title="webpack特点："></a>webpack特点：</h4><ul>
-<li>同时支持CommonJs和AMD</li>
-<li>一切都可以打包</li>
-<li>分模块打包</li>
-</ul>
-<h4 id="一个简单的例子："><a href="#一个简单的例子：" class="headerlink" title="一个简单的例子："></a>一个简单的例子：</h4><p>我们新建一个index.js文件，在里面写入<code>document.write(&#39;hello,world&#39;)</code>，然后新建一个webpack.config.js文件，他是webpack默认会读取的一个文件，里面有webpack的基本配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  entry: &apos;./index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname,</span><br><span class="line">    filename: &apos;bundle.js&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>再建一个index.html文件，在其中通过<code>&lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;</code>引入bundle.js文件。</p>
-<blockquote>
-<p>其中，entry是按照页面对应的，如果你的网站上面有三个页面，那么就有三个entry。output是你想把生成的文件放在哪个位置，并且指定文件名。</p>
-</blockquote>
-<p>就可以在页面里渲染出hello,world。</p>
-<p>那么，如果我想在index.html中引入index.css的文件应该怎么做。</p>
-<p>首先，在你的index.js里面，<code>require(&#39;./index.css&#39;);</code>,然后在webpack里面写入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  entry: &apos;./index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname,</span><br><span class="line">    filename: &apos;bundle.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  module: &#123;</span><br><span class="line">    loaders: [&#123;</span><br><span class="line">      test: /\.css/,</span><br><span class="line">      loaders: [&apos;style-loader&apos;,&apos;css-loader&apos;]</span><br><span class="line">      &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>模块是一个很重要的概念，所有的文件都可以看作是一个模块，对于模块的处理，有一个很重要的东西就是loader，loader就是我们要处理某些文件的时候，我们要怎么处理。比如我要处理css文件，用test检测要处理的文件，并指定针对这些文件用到的loader,即 style-loader和css-loader。而且这写顺序是先执行css-loader，作用是读取css文件，还可以处理路径。再执行style-loader，其作用是用js将css写入到html里面。</p>
-</blockquote>
-
-          
+<li>使用新的开发模式
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/webpack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -885,7 +1222,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -896,7 +1233,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -907,7 +1244,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -918,6 +1255,14 @@
           
 
           <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xingkong225" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
             
           </div>
 
@@ -962,6 +1307,10 @@
 
 
 
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.2k字</span>
+</div>
 
         
 
