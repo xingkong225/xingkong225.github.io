@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="本着越简单越好的原则，我会把自己看到的内容用自己的话描述一下，由于我在绘图这一方面所知的有所欠缺，因此先整理一下这方面的笔记，我默认读者已经知道了一些基础的知识，因此，从研究matlab中二维图形的绘制开始，没有别的废话，我们开始吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T06:59:37.490Z">
+<meta property="og:updated_time" content="2018-03-11T08:57:22.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记(一)">
 <meta name="twitter:description" content="本着越简单越好的原则，我会把自己看到的内容用自己的话描述一下，由于我在绘图这一方面所知的有所欠缺，因此先整理一下这方面的笔记，我默认读者已经知道了一些基础的知识，因此，从研究matlab中二维图形的绘制开始，没有别的废话，我们开始吧。">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,129
+                  1,788
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -408,6 +408,7 @@
 <p> <strong>线型</strong>：实线 ‘-‘ 虚线 ‘—‘ 点线 ‘:’ 点划线 ‘-.’。</p>
 <p> <strong>标记符号</strong>：点号 ‘.’ 空心圆 ‘o’ 叉号 ‘x’ 加号 ‘+’ 星号 ‘*’ 下三角形 ‘v’ 上三角形 ‘^’ 左三角形 ‘&lt;’ 右三角形 ‘&gt;’ 正方形 ‘s’ 菱形 ‘d’ 五角星形 ‘p’</p>
 <p> 这些不需要死记硬背，都是很形象的符号。</p>
+<p> 当然了，也有对曲线属性的一些设置，比如线条宽度LineWidth,标记颜色MarkerFaceColor,标记边框颜色MarkerEdgeColor,标记大小MarkerSize等等，我感觉大部分情况下用不上，具体的可以去Google一下。例如<code>plot(x,y,&#39;b:s&#39;,&#39;LineWidth&#39;,4,&#39;MarkerFaceColor&#39;,&#39;r&#39;,&#39;MarkerSize&#39;,10,&#39;MarkerEdgeColor&#39;,&#39;g&#39;);</code></p>
 <p> 另外，plot()函数还可以同时画多个函数的图像，例如：<code>x = linspace(0,2*pi);y1 = sin(x)./x;y2 = cos(x)./x;plot(x,y1,&#39;b-&#39;,x,y2,&#39;r:&#39;);</code>    </p>
 </li>
 <li><p>plotyy()函数</p>
@@ -431,6 +432,26 @@
 </li>
 </ol>
 <p>三维图形的绘制有着更加丰富的函数，让我们来试试吧。</p>
+<ol>
+<li><p>三维基本绘图函数：plot3()</p>
+<h6 id="plot3-x-y-z-lineSpec…"><a href="#plot3-x-y-z-lineSpec…" class="headerlink" title="plot3(x,y,z,lineSpec…)"></a>plot3(x,y,z,lineSpec…)</h6><p> 这个…就不说了吧</p>
+</li>
+<li><p>绘制网格图形：mesh(),meshc(),meshz()</p>
+<h6 id="mesh-X-Y-Z"><a href="#mesh-X-Y-Z" class="headerlink" title="mesh(X,Y,Z)"></a>mesh(X,Y,Z)</h6><p> mesh()用来创建普通的网格图，meshc()用来创建带有等高线的网格图，meshz()用来创建带有围裙的网格图，他们的调用格式完全一样。</p>
+<p> 在使用mesh函数时，最常用的就是meshgrid()函数生成网格数据。</p>
+<p> 简单来说，[X,Y] = meshgrid(x,y) 其中x和y都是一维向量，生成的X是x按照y元素的个数的行复制，生成的Y是y按照x元素的个数的列复制。例如a = [3,4,5], b = [1,2],则[X,Y] = meshgrid(a,b)得到的X是[3,4,5;3,4,5],Y是[1,1,1;2,2,2],可能这样说还是不是很直观，我们可以拿起笔在纸上按照正常写矩阵的方式把它们写出来，自然就一目了然了。值得一提的是，meshgrid(x)与meshgrid(x,x)等同。</p>
+</li>
+<li><p>绘制曲面图形(也就是上了颜色的)：surf(),surfc(),surfl()</p>
+<h6 id="surf-X-Y-Z"><a href="#surf-X-Y-Z" class="headerlink" title="surf(X,Y,Z)"></a>surf(X,Y,Z)</h6><p> surf()用来创建基本的着色图形，surfc()用来创建带有等高线的曲面图，surfl()可以控制光照效果。前两个用法与mesh()函数较为类似。</p>
+</li>
+<li><p>绘制隐函数三维图形：ezmesh()</p>
+<h6 id="ezmesh-f-limit"><a href="#ezmesh-f-limit" class="headerlink" title="ezmesh(f,limit)"></a>ezmesh(f,limit)</h6><p> 此时f = f(x,y)，limit是x和y的取值范围，即可以是二维向量[min,max]表示min&lt; x,y &lt;max,也可以是四维向量[xmin,xmax,ymin,ymax]，默认是-2*pi&lt; x,y &lt;2*pi。</p>
+<h6 id="ezmesh-x-y-z-limit"><a href="#ezmesh-x-y-z-limit" class="headerlink" title="ezmesh(x,y,z,limit)"></a>ezmesh(x,y,z,limit)</h6><p> 此时曲面使用参数方程表示出来，即x = x(u,v),y = y(u,v),z = z(u,v)，limit是u和v的取值范围，默认是[-2*pi&lt; u &lt;2*pi,-2*pi&lt; v &lt;2*pi]。也可以自己设定[umin,umax,vmin,vmax]</p>
+</li>
+</ol>
+<blockquote>
+<p>值得一提的是，ezmesh()和mesh()两个函数最主要的区别是，mesh()函数传入的参数是一个一个数值矩阵，但是ezmesh()函数的参数是隐函数或者是以参数方程表示的函数。例如要想画出来$x^2 + y^2 = 1$函数的图像，我们可以使用mesh()函数：<code>x = [-2:0.2:2]; y = [-3:0.2:3]; [X,Y] = meshgrid(x,y); Z = X.^2 + Y.^2 -1; mesh(X,Y,Z);</code>，也可以使用ezmesh()函数：<code>fun = @(x,y) x.^2 + y.^2 - 1; ezmesh(fun);</code></p>
+</blockquote>
 
       
     </div>
@@ -617,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-Y"><span class="nav-number">1.</span> <span class="nav-text">plot(Y)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-X-Y"><span class="nav-number">2.</span> <span class="nav-text">plot(X,Y)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-X-Y-lineSpec"><span class="nav-number">3.</span> <span class="nav-text">plot(X,Y,lineSpec)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plotyy-X1-Y1-X2-Y2"><span class="nav-number">4.</span> <span class="nav-text">plotyy(X1,Y1,X2,Y2)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fplot-function-limit-lineSpec"><span class="nav-number">5.</span> <span class="nav-text">fplot(function, limit,lineSpec)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ezplot-function-limit"><span class="nav-number">6.</span> <span class="nav-text">ezplot(function,limit)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#polar-theta-r-lineSpec"><span class="nav-number">7.</span> <span class="nav-text">polar(theta,r,lineSpec)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-Y"><span class="nav-number">1.</span> <span class="nav-text">plot(Y)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-X-Y"><span class="nav-number">2.</span> <span class="nav-text">plot(X,Y)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plot-X-Y-lineSpec"><span class="nav-number">3.</span> <span class="nav-text">plot(X,Y,lineSpec)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plotyy-X1-Y1-X2-Y2"><span class="nav-number">4.</span> <span class="nav-text">plotyy(X1,Y1,X2,Y2)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fplot-function-limit-lineSpec"><span class="nav-number">5.</span> <span class="nav-text">fplot(function, limit,lineSpec)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ezplot-function-limit"><span class="nav-number">6.</span> <span class="nav-text">ezplot(function,limit)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#polar-theta-r-lineSpec"><span class="nav-number">7.</span> <span class="nav-text">polar(theta,r,lineSpec)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#plot3-x-y-z-lineSpec…"><span class="nav-number">8.</span> <span class="nav-text">plot3(x,y,z,lineSpec…)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#mesh-X-Y-Z"><span class="nav-number">9.</span> <span class="nav-text">mesh(X,Y,Z)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#surf-X-Y-Z"><span class="nav-number">10.</span> <span class="nav-text">surf(X,Y,Z)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ezmesh-f-limit"><span class="nav-number">11.</span> <span class="nav-text">ezmesh(f,limit)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ezmesh-x-y-z-limit"><span class="nav-number">12.</span> <span class="nav-text">ezmesh(x,y,z,limit)</span></a></li></ol></div>
             
 
           </div>
@@ -655,7 +676,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.6k字</span>
+  <span class="post-count">博客全站共4.2k字</span>
 </div>
 
         
