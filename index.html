@@ -259,6 +259,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/Matlab学习笔记1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liyx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello,world!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/Matlab学习笔记1/" itemprop="url">Matlab学习笔记(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T22:20:20+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/专业课/" itemprop="url" rel="index">
+                    <span itemprop="name">专业课</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  312
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先研究一下matlab中二维图形的绘制</p>
+<p>基本绘图函数有—-</p>
+<blockquote>
+<p>plot(),fplot(),ezplot(),polar(),plotyy()</p>
+</blockquote>
+<h4 id="1-plot-函数"><a href="#1-plot-函数" class="headerlink" title="1.plot()函数"></a>1.plot()函数</h4><h6 id="plot-Y"><a href="#plot-Y" class="headerlink" title="plot(Y)"></a>plot(Y)</h6><p>若Y为向量，则以向量的索引值为横坐标，以向量的每一个分量作为纵坐标画图；</p>
+<p>若Y为实数矩阵，则将每列看做是一个向量，即有多少列就有多少函数的图像。以每列的值为纵坐标，以每列的值的索引为横坐标画在同一个图中。</p>
+<p>若Y为复数矩阵，则将Y的实部和虚部分开，看做两个矩阵，即为plot(real(Y),imag(Y))，关于两个分量的画图，见下一个函数。</p>
+<h6 id="plot-X-Y"><a href="#plot-X-Y" class="headerlink" title="plot(X,Y)"></a>plot(X,Y)</h6><p>最常见的是画出函数的图形，若X和Y均为一维向量，则建立起Y对应于X的图像，即以Y为纵坐标，以X为横坐标，此时要求X和Y中所含分量的个数必须一致。</p>
+<p>若X和Y均为矩阵，则要求X和Y的大小必须一致，以Y每列的数为纵坐标，对应于X的每一列的元素，个人感觉用的很少。</p>
+<h4 id="2-plotyy-函数"><a href="#2-plotyy-函数" class="headerlink" title="2.plotyy()函数"></a>2.plotyy()函数</h4><p>plotyy(X1,Y1,X2,Y2) 在同一个坐标轴中画出两个函数的图像，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/19/vuejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -830,7 +1013,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -852,7 +1035,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -917,7 +1100,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.4k字</span>
+  <span class="post-count">博客全站共2.7k字</span>
 </div>
 
         
