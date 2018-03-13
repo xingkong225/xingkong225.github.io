@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式。">
+<meta name="description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式呢，这是一个值得思考的问题。">
 <meta name="keywords" content="论文写作,数学公式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex笔记--数学公式">
 <meta property="og:url" content="http://yoursite.com/2018/03/12/LaTex笔记-数学公式/index.html">
 <meta property="og:site_name" content="Hello,world!">
-<meta property="og:description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式。">
+<meta property="og:description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式呢，这是一个值得思考的问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T07:49:44.968Z">
+<meta property="og:updated_time" content="2018-03-12T13:58:40.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex笔记--数学公式">
-<meta name="twitter:description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式。">
+<meta name="twitter:description" content="作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式呢，这是一个值得思考的问题。">
 
 
 
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  220
+                  729
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -383,11 +383,281 @@
       
 
       
-        <p>作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式。</p>
+        <p>作为一名数学专业的理科生，写论文的时候必不可少的需要使用数学公式，那么如何在论文中优雅的使用LaTex编辑数学公式呢，这是一个值得思考的问题。</p>
 <a id="more"></a>
-<p>首先说明一点：<strong>行内公式</strong>，就是使用$…$包括的内容。$jiushizheyang$而<strong>行间公式</strong>，就是使用$$…$$包括起来内容。顾名思义，行内公式就是和其他的文字显示在同一行，而行间公式就是另起一行，在新的一行里面写公式。</p>
-<p>首先说明一点：<strong>行内公式</strong>，在两个$符号中间写公式，<strong>行间公式</strong>，在四个$符号中间写公式。顾名思义，行内公式就是和其他的文字显示在同一行，而行间公式就是另起一行，在新的一行里写公式。例如行内公式 $a+b$ 和行间公式 <script type="math/tex">a+b = b+a</script></p>
-<p><strong>上标</strong></p>
+<p>首先说明一点：<strong>行内公式</strong>，就是使用两个$符号写公式。而<strong>行间公式</strong>，就是使用四个$符号写公式。顾名思义，行内公式就是和其他的文字显示在同一行，而行间公式就是另起一行，在新的一行里面写公式。</p>
+<p>例如，行内公式$a+b = b+a$，行间公式</p>
+<script type="math/tex; mode=display">a+b = b+a</script><p>很奇怪，我的$符号没有被转义出来，这里就不写出来我的源代码了。</p>
+<p><strong>上标</strong>  </p>
+<p><code>3x^{10}</code> ==&gt; $3x^{10}$，在编辑公式的过程中，我们还可以将已有的数学公式一块作为上标，例如：<code>3x^{5x^2}</code> ==&gt; $3x^{5x^2}$，注意要加上大括号，当大括号里面的内容是10以下的自然数的时候，我们可以省略括号，像这样<code>x^0</code> ==&gt; $x^0$。</p>
+<p><strong>下标</strong></p>
+<p><code>b_{100}</code> ==&gt; $b_{100}$，同样的，我们也可以用一些表达式作为下标，但也得加上大括号，像这样，<code>a_{3x^4}</code> ==&gt; $a_{3x^4}$，当然，当大括号里面的内容是10以下的自然数的时候，可以省略。</p>
+<p><strong>希腊字母</strong></p>
+<p>我们只需要在数学公式环境中用两个$符号将相应的希腊字母包括起来就好。</p>
+<p><code>\alpha</code> ==&gt; $\alpha$</p>
+<p>常用的Tex希腊字母一览表：</p>
+<table>
+  <tr>
+    <td>Tex字符</td>
+    <td>代表符号</td>
+    <td>Tex字符</td>
+    <td>代表符号</td>
+    <td>Tex字符</td>
+    <td>代表符号</td>
+    <td>Tex字符</td>
+    <td>代表符号</td>
+  </tr>
+  <tr>
+    <td>\alpha</td>
+    <td>$\alpha$</td>
+    <td>\beta</td>
+    <td>$\beta$</td>
+    <td>\gamma</td>
+    <td>$\gamma$</td>
+    <td>\Gamma</td>
+    <td>$\Gamma$</td>
+  </tr>
+  <tr>
+    <td>\theta</td>
+    <td>$\theta$</td>
+    <td>\Theta</td>
+    <td>$\Theta$</td>
+    <td>\delta</td>
+    <td>$\delta$</td>
+    <td>\Delta</td>
+    <td>$\Delta$</td>
+  </tr>
+  <tr>
+    <td>\xi</td>
+    <td>$\xi$</td>
+    <td>\Xi</td>
+    <td>$\Xi$</td>
+    <td>\omega</td>
+    <td>$\omega$</td>
+    <td>\Omega</td>
+    <td>$\Omega$</td>
+  </tr>
+  <tr>
+    <td>\epsilon</td>
+    <td>$\epsilon$</td>
+    <td>\zeta</td>
+    <td>$\zeta$</td>
+    <td>\eta</td>
+    <td>$\eta$</td>
+    <td>\mu</td>
+    <td>$\mu$</td>
+  </tr>
+  <tr>
+    <td>\lambda</td>
+    <td>$\lambda$</td>
+    <td>\Lambda</td>
+    <td>$\Lambda$</td>
+    <td>\tau</td>
+    <td>$\tau$</td>
+    <td>\circ</td>
+    <td>$\circ$</td>
+  </tr>
+  <tr>
+    <td>\otimes</td>
+    <td>$\otimes$</td>
+    <td>\oplus</td>
+    <td>$\oplus$</td>
+    <td>\sigma</td>
+    <td>$\sigma$</td>
+    <td>\Sigma</td>
+    <td>$\Sigma$</td>
+  </tr>
+  <tr>
+    <td>\chi</td>
+    <td>$\chi$</td>
+    <td>\leq</td>
+    <td>$\leq$</td>
+    <td>\geq</td>
+    <td>$\geq$</td>
+    <td>\neq</td>
+    <td>$\neq$</td>
+  </tr>
+  <tr>
+    <td>\equiv</td>
+    <td>$\equiv$</td>
+    <td>\approx</td>
+    <td>$\approx$</td>
+    <td>\times</td>
+    <td>$\times$</td>
+    <td>\div</td>
+    <td>$\div$</td>
+  </tr>
+  <tr>
+    <td>\surd</td>
+    <td>$\surd$</td>
+    <td>\partial</td>
+    <td>$\partial$</td>
+    <td>\in</td>
+    <td>$\in$</td>
+    <td>\ni</td>
+    <td>$\ni$</td>
+  </tr>
+  <tr>
+    <td>\pm</td>
+    <td>$\pm$</td>
+    <td>\mp</td>
+    <td>$\mp$</td>
+    <td>\langle</td>
+    <td>$\langle$</td>
+    <td>\rangle</td>
+    <td>$\rangle$</td>
+  </tr>
+  <tr>
+    <td>\mid</td>
+    <td>$\mid$</td>
+    <td>\lfloor</td>
+    <td>$\lfloor$</td>
+    <td>\leftrightarrow</td>
+    <td>$\leftrightarrow$</td>
+    <td>\rightarrow</td>
+    <td>$\rightarrow$</td>
+  </tr>
+  <tr>
+    <td>\leftarrow</td>
+    <td>$\leftarrow$</td>
+    <td>\uparrow</td>
+    <td>$\uparrow$</td>
+    <td>\downarrow</td>
+    <td>$\downarrow$</td>
+    <td>\updownarrow</td>
+    <td>$\updownarrow$</td>
+  </tr>
+  <tr>
+    <td>\Leftrightarrow</td>
+    <td>$\Leftrightarrow$</td>
+    <td>\Rightarrow</td>
+    <td>$\Rightarrow$</td>
+    <td>\Leftarrow</td>
+    <td>$\Leftarrow$</td>
+    <td>\Uparrow</td>
+    <td>$\Uparrow$</td>
+  </tr>
+  <tr>
+    <td>\Downarrow</td>
+    <td>$\Downarrow$</td>
+    <td>\Updownarrow</td>
+    <td>$\Updownarrow$</td>
+    <td>\rho</td>
+    <td>$\rho$</td>
+    <td>\nu</td>
+    <td>$\nu$</td>
+  </tr>
+  <tr>
+    <td>\varpi</td>
+    <td>$\varpi$</td>
+    <td>\forall</td>
+    <td>$\forall$</td>
+    <td>\pi</td>
+    <td>$\pi$</td>
+    <td>\Pi</td>
+    <td>$\Pi$</td>
+  </tr>
+  <tr>
+    <td>\exists</td>
+    <td>$\exists$</td>
+    <td>\phi</td>
+    <td>$\phi$</td>
+    <td>\Phi</td>
+    <td>$\Phi$</td>
+    <td>\psi</td>
+    <td>$\psi$</td>
+  </tr>
+  <tr>
+    <td>\Psi</td>
+    <td>$\Psi$</td>
+    <td>\varsigma</td>
+    <td>$\varsigma$</td>
+    <td>\vartheta</td>
+    <td>$\vartheta$</td>
+    <td>\aleph</td>
+    <td>$\aleph$</td>
+  </tr>
+  <tr>
+    <td>\o</td>
+    <td>$\o$</td>
+    <td>\infty</td>
+    <td>$\infty$</td>
+    <td>\propto</td>
+    <td>$\propto$</td>
+    <td>\cup</td>
+    <td>$\cup$</td>
+  </tr>
+  <tr>
+    <td>\cap</td>
+    <td>$\cap$</td>
+    <td>\subset</td>
+    <td>$\subset$</td>
+    <td>\supset</td>
+    <td>$\supset$</td>
+    <td>\subseteq</td>
+    <td>$\subseteq$</td>
+  </tr>
+  <tr>
+    <td>\supseteq</td>
+    <td>$\supseteq$</td>
+    <td>\0</td>
+    <td>$\0$</td>
+    <td>\oslash</td>
+    <td>$\oslash$</td>
+    <td>\neg</td>
+    <td>$\neg$</td>
+  </tr>
+  <tr>
+    <td>\vee</td>
+    <td>$\vee$</td>
+    <td>\kappa</td>
+    <td>$\kappa$</td>
+    <td>\wp</td>
+    <td>$\wp$</td>
+    <td>\nabla</td>
+    <td>$\nabla$</td>
+  </tr>
+  <tr>
+    <td>\spadesuit</td>
+    <td>$\spadesuit$</td>
+    <td>\clubsuit</td>
+    <td>$\clubsuit$</td>
+    <td>\diamondsuit</td>
+    <td>$\diamondsuit$</td>
+    <td>\heartsuit</td>
+    <td>$\heartsuit$</td>
+  </tr>
+  <tr>
+    <td>\copyright</td>
+    <td>$\copyright$</td>
+    <td>\rfloor</td>
+    <td>$\rfloor$</td>
+    <td>\lceil</td>
+    <td>$\lceil$</td>
+    <td>\sim</td>
+    <td>$\sim$</td>
+  </tr>
+  <tr>
+    <td>\Re</td>
+    <td>$\Re$</td>
+    <td>\bullet</td>
+    <td>$\bullet$</td>
+    <td>\iota</td>
+    <td>$\iota$</td>
+    <td>\Im</td>
+    <td>$\Im$</td>
+  </tr>
+</table>
+
+<p>当然，希腊字母可以与上下标一起使用。</p>
+<p><strong>数学函数</strong></p>
+<p>一些特殊的数学函数也可以借助反斜线显示出来。</p>
+<p><code>\log</code> ==&gt; $\log$ <code>\sin</code> ==&gt; $\sin$ <code>\arcsin</code> ==&gt; $\arcsin$</p>
+<p><code>\log_3 x</code> ==&gt; $\log_3 x$ <code>\ln x</code> ==&gt; $\ln x$ <code>\cos^{10} x</code> ==&gt; $\cos^{10} x$</p>
+<p><strong>开方函数</strong></p>
+<p><code>\sqrt{4}</code> ==&gt; $\sqrt{4}$ <code>\sqrt[5]{x}</code> ==&gt; $\sqrt[5]{x}$，使用中括号指明开方的次数，使用大括号指明要被开方的表达式。</p>
+<p><strong>分式</strong></p>
+<p><code>\frac{1}{2}</code> ==&gt; $\frac{1}{2}$，前一个数是分子，后一个数是分母。</p>
 
       
     </div>
@@ -587,7 +857,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.6k字</span>
+  <span class="post-count">博客全站共5.1k字</span>
 </div>
 
         
