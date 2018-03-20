@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="随机变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T15:56:32.138Z">
+<meta property="og:updated_time" content="2018-03-20T04:21:12.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(二)">
 <meta name="twitter:description" content="随机变量">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,762
+                  3,489
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  14
                 </span>
               
             </div>
@@ -458,10 +458,18 @@
 <p><strong>设$X$是随机变量，均值$E(X)$存在，并且令$g(x)$是一个凸函数，则有$E(g(X)) \ge g(E(X))$</strong></p>
 <h4 id="矩和矩函数"><a href="#矩和矩函数" class="headerlink" title="矩和矩函数"></a>矩和矩函数</h4><p><strong>定义：设$X$是随机变量，如果$E(X^r)$存在($r$是正整数)，则称$E(X^r)$是$X$的$r$阶原点矩。记为$\mu^{’}_r$</strong></p>
 <p><strong>定义：设$X$是随机变量如果$E(X)$存在且$E(X-E(X))^r$存在($r$是正整数)，则称$E(X-E(X))^r$为$X$的$r$阶中心矩。记为$\mu_r$</strong></p>
-<p>显然$\mu^{’}_1=E(X)$，即为均值。$\mu_1=E(X-E(X))=0$，且$\mu_2=E(X-E(X))^2$即为方差。</p>
+<p>显然一阶原点矩$\mu^{’}_1=E(X)$，即为均值。一阶中心矩$\mu_1=E(X-E(X))=0$，且二阶中心矩$\mu_2=E(X-E(X))^2$即为方差。</p>
 <p>我们通常将$\alpha=\frac{\mu_3}{\sigma^3}$称为$X$的偏度系数，用来刻画随机变量取值关于均值的对称程度，(当$X$取值关于$E(X)$对称时$\alpha=0$)；$\gamma=\frac{\mu_4}{\sigma^4}$称为$X$的峰度系数，若$X$有分布函数，则用来刻画分布函数曲线的陡峭程度。当$X~N(\mu,\sigma^2)$，则$\alpha=0,\gamma=3$。(其中$\sigma$是随机变量的标准差)</p>
+<p><strong>矩函数</strong>  若$X$是连续型随机变量，$f_X(x)$是其密度函数，且$e^{tX}$对于每一个$-h &lt; t &lt; h,h &gt; 0$的期望都存在，则$m(t)=E(e^{tX})=\int_{-\infty}^{\infty}e^{tx}f_X(x) dx$，若$X$是离散型随机变量，则$m(t)=E(e^{tX})=\sum\limits_{k}e^{tx}f_X(x)$。</p>
+<p>矩函数在计算一些随机变量的期望和方差时是十分重要的，如果我们将矩函数求$r$阶导，即$\frac{d^r}{dt^r}m(t)=\int_{-\infty}^{\infty}x^re^{xt}f_X(x)dx$，如果让$t \rightarrow 0$，可以得到$\frac{d^r}{dt^r}m(0)=E(X^r)=\mu_r^{’}$，这就是随机变量的$r$阶原点矩，结合前面求方差的方法，就可以轻松的求出期望和方差。</p>
 <h4 id="p分位数、中位数、众数"><a href="#p分位数、中位数、众数" class="headerlink" title="p分位数、中位数、众数"></a>p分位数、中位数、众数</h4><p><strong>定义：设$X$是随机变量，$0 &lt; p &lt; 1$，称$a$是$X$的$p$分位数(也称$p$分位点)若成立$P(X \leq a) \ge p \ge P(X &lt; a)$</strong></p>
-<p>常用$a_p$表示中位数，0.5分位数又叫做<strong>中位数</strong>，用$med(X)$表示。</p>
+<p>常用$a_p$表示$p$分位数，$q$分位数$\xi$即满足$F_X(\xi) \ge q$的最小值，若$X$是连续型随机变量，则$q$分位数$\xi$即满足$F_X(\xi) = q$的最小值。若$X$有密度函数$f_X(x)$，则在$XOY$平面上由$p(x)$和$x$轴及直线$x=a_p$所围成图形的面积就等于$p$。</p>
+<p>0.5分位数又叫做<strong>中位数</strong>，用$med(X)$表示。中位数有一个性质，即$P[X \leq med(X)] \ge \frac{1}{2},P[X \ge med(X)] \ge \frac{1}{2}$，当$X$是连续型随机变量时，$X$的中位数满足，$\int_{-\infty}^{med(X)}f_X(x) dx = \frac{1}{2} = \int_{med(X)}^{\infty}f_X(x) dx$。</p>
+<p>值得一提的是，虽然期望和中位数都可以用来刻画随机变量的”平均水平”，但是它们仍然有区别，对于任何的随机变量$X$，有时$E(X)$可能不存在，但是中位数$med(X)$永远存在。均值可能受$X$所取的某些极端值的影响，但是中位数却不受这种影响。例如，用$X$表示某一地区任何一个家庭的年收入，有可能某些家庭的收入特别高，大多数家庭的收入却低得多，此时中位数则比期望小得多，它不受极少数家庭收入特高或特低的影响，因此，从”和谐社会”的角度来看，家庭收入的中位数相当重要，研究$E(X)$和$med(X)$的差异对于税务工作十分重要，当$E(X)$比$med(X)$大得多时，应有合适的税收法律向收入非常高的人们征收重税。</p>
+<p><strong>众数定义：</strong></p>
+<p>(1) 设$X$是离散型随机变量，可能值是$x_1,x_2,\cdots$(有限个或可列个)，称$x_k$是$X$的众数，若$P(X=x_k) \ge P(X=x_i)$(一切$x_i$);</p>
+<p>(2) 设$X$是连续型随机变量，密度函数是$p(x)$，称$p(x)$的最大值点$x_0$是$X$的众数。</p>
+<p>注意：对一个随机变量，众数不一定存在，当它存在时可能不只一个。众数的直观意义是：随机变量在该数或其附近取值的概率最大。</p>
 
       
     </div>
@@ -688,7 +696,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共13.4k字</span>
+  <span class="post-count">博客全站共14.1k字</span>
 </div>
 
         
