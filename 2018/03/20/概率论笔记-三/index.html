@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="概率论，数学," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。">
+<meta name="keywords" content="概率论，数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论笔记(三)">
+<meta property="og:url" content="http://yoursite.com/2018/03/20/概率论笔记-三/index.html">
+<meta property="og:site_name" content="Hello,world!">
+<meta property="og:description" content="写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521620681978&di=0a20fe11470e7eaeee6c7115c64e9cb7&imgtype=0&src=http%3A%2F%2Fpic.chinawenben.com%2Fupload%2F1_3q2r3qv178q3ox18b112ob1a.jpg">
+<meta property="og:updated_time" content="2018-03-21T05:48:13.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="概率论笔记(三)">
+<meta name="twitter:description" content="写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。">
+<meta name="twitter:image" content="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/20/概率论笔记-三/"/>
+
+
+
+
+
+  <title>概率论笔记(三) | Hello,world!</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hello,world!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/概率论笔记-三/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liyx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello,world!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">概率论笔记(三)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T15:53:15+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/专业课/" itemprop="url" rel="index">
+                    <span itemprop="name">专业课</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,213
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。</p>
+<a id="more"></a>
+<p>我们知道随机变量有离散型随机变量和连续型随机变量之分，因此分开来说明是有必要的。</p>
+<h2 id="离散型随机变量的分布函数"><a href="#离散型随机变量的分布函数" class="headerlink" title="离散型随机变量的分布函数"></a>离散型随机变量的分布函数</h2><p><strong>一、两点分布(又称伯努利分布)</strong></p>
+<p>定义：如果随机变量$X$的可能值是0和1且概率分布为，$P(X=1)=p,P(X=0)=1-p(0 \leq p \leq 1)$，则称$X$服从两点分布，也叫伯努利分布。</p>
+<p>通常，我们也会将$1-p$写作$q$。有时，两点分布也会写成更加复杂也显得比较专业的形式，但是我们必须要知道以下的两种写法是与上方的定义是等价的。</p>
+<script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}p^x(1-p)^{1-x} &x=0或1\\0 & otherwise\end{cases}\end{eqnarray}</script><script type="math/tex; mode=display">f_X(x)=p^x(1-p)^{1-x}I_{\{0,1\}}(x)</script><p>如果$X$满足两点分布(伯努利分布)，我们有$E(X)=p,var(X)=pq,m(t)=pe^t+q$(还记得吗，$m(t)$是矩函数，如果忘记了可以去看看我的上一个笔记内容)</p>
+<p><strong>二、二项分布</strong></p>
+<p>定义：设随机变量$X$的所有可能取值是$0,1,\cdots,n$，且$P(X=k)=C_n^k p^k (1-p)^{n-k}(k=0,1,\cdots,n)$，这里$n \ge 1,0 \leq p \leq 1$，则称$X$服从参数为$n,p$的二项分布，记做$X \sim B(n,p)$。</p>
+<p>二项分布的背景是，若在每次试验中事件$A$发生的概率都是$p$，则在$n$次独立重复实验中，$A$发生$k$次的概率即是上述的二项分布。并且我们应该能看得出来，当$n$的值是1时，二项分布就是两点分布。</p>
+<p>由于二项分布中每一次的事件都是独立的，因此在每一次的实验中，成功的概率是$p$，失败的概率是$1-p$，其实都是两点分布，也就是伯努利分布。</p>
+<p>如果随机变量$X$满足二项分布，则有$E(X)=np,var(X)=npq,m(t)=(q+pe^t)^n$。在这里计算的时候利用矩函数会更加方便一些。</p>
+<p>这里也给出二项分布的另几种表达方式。</p>
+<script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}\binom{n}{x}p^x q^{n-x} &x=0,1,2,\cdots,n\\0 &otherwise\end{cases}\end{eqnarray}</script><script type="math/tex; mode=display">f_X(x)=\binom{n}{x}p^xq^{n-x}I_{\{0,1,\cdots,n\}}(x)</script><p><strong>定理：令$p_n(k)=C_n^k p^k (1-p)^{n-k}$，则当$(n+1)p$不是整数时，$k &lt; (n+1)p$时，$p_n(k)$单调上升，当$k &gt; (n+1)p$时，$p_n(k)$单调下降。当$(n+1)p$是整数时，$p_n((n+1)p)=p_n((n+1)p-1)$，同样在其左侧单调上升，在其右侧单调下降。</strong></p>
+<p>据此，我们知道，$p_n(k)$作为$k$的函数先增后减，在[(n+1)p]处取得最大值，并且当$(n+1)p$是整数时，有两个最大值点，即(n+1)p=(n+1)p-1.</p>
+<p><strong>三、超几何分布</strong></p>
+<p>定义：若随机变量$X$的分布满足，$P(X=k)=\frac{C_D^{k}C_{N-D}^{n-k}}{C_N^n}$，则称$X$服从超几何分布。</p>
+<p>我们可以将公式这样理解，在共有$N$个产品中，一共有$D$个不合格的产品，现从中取出$n$个，则这$n$个产品中所含的不合格的产品数则是上述的离散型随机变量。</p>
+<p>超几何分布与二项分布有着密切的关系：</p>
+<p><strong>定理：设在超几何分布中$D$是$N$的函数，即$D=D(N)$，并且有$\lim\limits_{N \rightarrow \infty} \frac{D(N)}{N}=p(0 &lt; p &lt; 1)$，则有$\lim\limits_{N \rightarrow \infty}\frac{C_{D(N)}^{k}C_{N-D(N)}^{n-k}}{C_N^n}=C_n^k p^k(1-p)^{n-k}$，对任何固定的$k \ge 0$</strong></p>
+<p>上述定理的直观意义是，当一批产品的总量$N$很大时，而不合格产品所占的比例是$p$，则从整批中随机抽取$n$个时所抽到的不合格个数近似服从参数是$n,p$的二项分布。</p>
+<p>对于超几何分布，其期望$E(X)=n·\frac{D}{N}$，方差$var(X)=n·\frac{D}{N}·\frac{N-D}{N}·\frac{N-n}{N-1}$。</p>
+<p><strong>四、离散均匀分布</strong></p>
+<p>定义：设随机变量$X$的取值范围是$(1,2,\cdots,N)$($N$是大于1的整数)，且$P(X=k)=\frac{1}{N}(k=1,2,\cdots,N)$，则称$X$服从离散均匀分布。</p>
+<p>当然，我还会将离散均匀分布的另一种表达方式写在下面：</p>
+<script type="math/tex; mode=display">\begin{eqnarray}f(x)=\begin{cases}\frac{1}{N} &x=1,2,\cdots,N\\0 &otherwise\end{cases}\end{eqnarray}</script><p>对于离散均匀分布，我们有$E(X)=\frac{N+1}{2},var(X)=\frac{N^2-1}{12},m(t)=\sum\limits_{j=1}^{N}e^{jt}\frac{1}{N}$。</p>
+<p>离散均匀分布在抽签，抽样调查及彩票中奖等方面的研究中常遇到，有时参数$N$是未知的，你需要去估计它。</p>
+<p><strong>五、几何分布</strong></p>
+<p>定义：设$X$是一个随机变量，且值为正整数，若满足$P(X=k)=(1-p)^{k-1}p(k=1,2,\cdots)$，其中$(0 &lt; p &lt; 1)$，则称$X$服从几何分布。</p>
+<p>如果我们令$p_k=(1-p)^{k-1}p(k=1,2,\cdots)$，则$p_k$构成了一个以公比为$1-p$的几何级数，”几何分布”的名称就来源于此。由此可见，几何分布的众数必然为0！</p>
+<p>我们可以这样理解几何分布，设某射击选手向某目标连续射击，直到击中为止，若他单次射击射中目标的概率是$p$，则他首次射中目标所需要的射击次数就是一个随机变量，且显然服从几何分布。</p>
+<p>对于几何分布，我们有$E(X)=\frac{q}{p},var(X)=\frac{q}{p^2},m(t)=\frac{p}{1-qe^t}$，其中$q=1-p$</p>
+<p>几何分布还有着一个十分有趣的性质(无后效性)：如果$X$是一个几何分布，那么就有$P(X \ge i+j | X \ge i)=P(X \ge j),i,j=0,1,2,\cdots$，也就是如果在前$i$次实验都没有成功的条件下，再至少进行$j$次实验才能成功的概率，与在没有任何条件下，至少经过$j$次实验才能成功的概率是相等的。换言之，若进行了$i$次实验都没有成功，那么需要至少再做$j$次实验才能成功的概率，不依赖于以前的实验，也就是说，将过去的记忆忘记了，就像实验重新开始一样，这种性质也叫作无后效性或者无记忆性。</p>
+<p><strong>六、负二项分布</strong></p>
+<p>定义：设随机变量$X$的取值范围是$(r,r+1,\cdots)$，(r是正整数)，且$P(X=k)=C_{k-1}{r-1}p^r(1-p)^{k-r}$，则称$X$满足负二项分布。</p>
+<p>有些课本还会使用下方的表达式表示负二项分布，但是它们表示的意义是一样的，可以互相推导：</p>
+<script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}\binom{r+x-1}{x}p^r q^x=\binom{-r}{x}p^r (-q)^x &x=0,1,2,\cdots\\0 &otherwise\end{cases}\end{eqnarray}</script><p>在这里，如果$r=1$，则负二项分布就变成了几何分布。</p>
+<p>负二项分布的背景是，设某一个射击选手向一个目标连续进行射击，决心射中$r$次后停止，若他单次射击射中目标的概率是$0 &lt; p &lt; 1$，则他需要射击的次数就是一个随机变量，显然满足负二项分布的表达式。负二项分布的特点是最后一次发生的事件一定是成功的。</p>
+<p>我们可以看出来，就像二项分布与伯努利分布的关系一样，负二项分布也是可以由若干个几何分布”叠加形成”。</p>
+<p>对于负二项分布，我们有$E(X)=\frac{rq}{p},var(X)=\frac{rq}{p^2},m(t)=\left[\frac{p}{1-qe^t}\right]^r$，其中$q=1-p$，同样的我们使用矩函数会使我们的运算更加的方便。注意这里的期望和方差都与几何分布相应的期望和方差相差一个$r$。</p>
+<p><strong>七、泊松分布</strong></p>
+<p>定义：设随机变量$X$所有可能值是全体的非负整数，且$P(X=k)=\frac{1}{k!}\lambda^k e^{-\lambda}(k=0,1,2,\cdots)$，其中$\lambda$是整数，则称$X$是服从参数为$\lambda$的泊松分布。</p>
+<p>泊松在1837年首先提出了这个分布，他把这个分布看作是二项分布$B(n,p)$当$np \rightarrow \lambda$时的极限。当二项分布的$n$很大而$p$很小时，泊松分布可以作为二项分布的近似，后来人们发现了这个分布可以用来刻画许多的随机现象。在之后我们会看到有连续型随机变量的<strong>指数分布</strong>，它其实就可以由泊松分布推导出来。</p>
+<p>泊松分布的参数$\lambda$是单位时间或者单位面积内随机事件的平均发生率。它适合于描述单位时间内随机事件发生的次数，为许多的随机现象提供了一个现实的模型。就像课本中所描述的那样，发生的事情可能是致命的交通事故、粒子的发射、电话的到来、陨星的撞击、材料的缺陷、电线的损坏等等随机事件，如果对观察中的现象的某些假设得到了满足，则泊松模型就是正确的模型。值得注意的是，泊松分布中随机变量的取值只能是非负的整数，而且参数$\lambda$必须要大于零。</p>
+<p>对于泊松分布，我们有$E(X)=\lambda,var(X)=\lambda,m(t)=e^{\lambda(e^t-1)}$</p>
+<p>这个公式是很重要的，可以用来计算概率：$P[Z(t)=z]=\frac{e^{-vt}(vt)^z}{z!}$，其中$z=0,1,2,\cdots$，$t$为一段时间，并且有$\lambda=vt$，$v$即事件发生的频率。</p>
+<p>例如：如果一个公司在一分钟内平均收到四个电话，那么在接下来的三分钟，一个电话都收不到的概率是多少？$P[Z(3)=0]=\frac{e^{-3 \times 4} {3 \times 4}^0}{0!}$.接下来一分钟，至少收到两个电话的概率是多少？$P[Z(1) \ge 2]=1-P[Z(1)=0]-P[Z(1)=1]$，直接带入公式即可求得。</p>
+<p>我们需要思考这样一个问题，设$X$服从泊松分布，则当$k$取何值时，其概率最大？那么请看下面的一个定理。</p>
+<p>设$X$满足泊松分布，则当$k &lt; \lambda$时，密度函数单调上升；当$k &gt; \lambda$时，密度函数单调下降；当$\lambda$是一个整数并且$k=\lambda$时，有$\frac{e^{-\lambda}\lambda^{k-1}}{(k-1)!} = \frac{e^{-\lambda}\lambda^k}{k!}$，其中$k$是随机变量，取值为$(0,1,2,\cdots),\lambda$为参数。</p>
+<p>因此，我们可以得到结论，在频率的附近，事件发生的概率最高，然后两边就开始下降，当随机变量变得过大或者过小都不太可能。比如平均一分钟收到四个电话，这个是最有可能的，收到的电话更多或者更少都不太可能。</p>
+<h2 id="连续型随机变量的分布函数"><a href="#连续型随机变量的分布函数" class="headerlink" title="连续型随机变量的分布函数"></a>连续型随机变量的分布函数</h2><p><strong>一、均匀分布</strong></p>
+<p>定义：设随机变量$X$满足$\begin{eqnarray}f_X(x)=\begin{cases}\frac{1}{b-a} &amp;a \leq x \leq b\\0 &amp;otherwise\end{cases}\end{eqnarray}$，则称$X$服从区间$[a,b]$上的均匀分布。</p>
+<p>我们可以看到，$P(c&lt;X&lt;d)=\frac{(d-c)}{(b-a)}$，这表明，$X$取值于$[a,b]$中任何小区间的概率与该小区间的长度成正比，而与该小区间的位置无关，这就是均匀分布的概率意义。例如去公共汽车站候车的时间就是均匀分布，因为出行者到达车站的时刻是随机的。</p>
+<p>对于均匀分布，我们有$E(X)=\frac{a+b}{2},var(X)=\frac{(b-a)^2}{12},m(t)=\frac{e^{bt}-e^{at}}{(b-a)t}$</p>
+<p>同时也不难求出其分布函数为$F_X(x)=\left(\frac{x-a}{b-a}\right)I_{[a,b]}(x) + I_{(b,\infty)}(x)$</p>
+<p>值得注意的是，在定义均匀分布时，我们指定小区间为一个闭区间，但是仍然可以定义在开区间以及半开半闭区间上的均匀分布，只不过这个时候的密度函数与原来是一样的。我们已经知道，改变区间内有限个点不会影响在该区间上积分的值，所以即使密度函数不一样，但是分布仍然是一样的。</p>
+<p><strong>二、正态分布</strong></p>
+<p>定义：如果随机变量的密度函数为</p>
+<script type="math/tex; mode=display">f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^2}{2\sigma^2}}</script><p>其中$\mu$是实数，$\sigma$是正数，则称$X$服从参数为$\mu, \sigma$的正态分布，记为$X \sim N(\mu, \sigma)$，正态分布也叫做高斯分布。</p>
+<p>密度函数在直角坐标中的图像为一个钟形，最大值点是$x=\mu$，图像关于直线$x=\mu$对称，在$x=\mu+\sigma$和$x=\mu-\sigma$处有拐点，当$x \rightarrow \infty$和$x \rightarrow -\infty$时曲线均以$x$轴为渐近线。并且当$\sigma$大时曲线平缓，当$\sigma$小时曲线陡峭。</p>
+<p><img src="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg" alt="正态分布的图片"></p>
+<p>我们使用$\mu, \sigma$这些符号的原因是由于，已经被证明其中$\mu$就是均值，$\sigma^2$就是方差。</p>
+<p>当$\mu=0,\sigma^2=1$时的分布叫做标准正态分布，其密度函数是$f_X(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$，我们可以经过$y=\frac{x-\mu}{\sigma}$这种变换将正态分布转换成标准正态分布，并且已经证明了$A=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{-x^2}{2}} dx$的值为1，其中需要用到数学分析的知识，即将重积分化为累次积分，这个证明方法也是很巧妙地，读者应该会自己推导。</p>
+<p>通常的，我们使用$\phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}},\Phi(x)=\int_{-\infty}^{x}\phi(u) du$这种记法来表示标准正态密度及其分布函数。$\Phi(x)$有着一个十分不错的性质，即$\Phi(-x)=1-\Phi(x)$，我们应该知道，标准正态分布是一个很重要的概念，几乎所有的正态分布都可以由标准正态分布函数也就是$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$计算出来。(可见下面的定理)关于标准正态分布还有一个表格，因为我们几乎不可能将对所有的$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$积分值算出来，查阅表格是一个比较方便的事情。</p>
+<p>下面的定理表明，我们可以将任何正态分布的随机变量落在某一个区间上的概率转换到标准正态分布上。</p>
+<p><strong>定理：如果$X \sim N(\mu,\sigma^2)$，则有$P(a &lt; X &lt; b)=\Phi(\frac{b-\mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})$</strong></p>
+<p><strong>推论：设$X \sim N(\mu,\sigma^2)$，则对一切正数$k$，有$P(\mu-k\sigma &lt; X &lt; \mu+k\sigma)=2\Phi(k)-1$，这个推论可以从上述定理推导出来。</strong></p>
+<p>从上述推论以及参阅标准正态分布表，我们可以知道，</p>
+<p>$P(\mu-\sigma &lt; X &lt; \mu+\sigma) = 0.6826$</p>
+<p>$P(\mu-2\sigma &lt; X &lt; \mu+2\sigma) = 0.9546$</p>
+<p>$P(\mu-3\sigma &lt; X &lt; \mu+3\sigma) = 0.9974$</p>
+<p>$P(\mu-6\sigma &lt; X &lt; \mu+6\sigma) = 0.\underbrace{9\cdots9}_{9个9}0134$</p>
+<p>由此可见，正态随机变量$X$的取值基本落在区间$(\mu-3\sigma,\mu+3\sigma)$内，落在$(\mu-6\sigma,\mu+6\sigma)$之外的情形极为罕见。</p>
+<p>人们发现，许多生理指标，例如身高、体重、血压等，以及产品的质量指标，例如硬度、抗压强度等，都服从或者近似服从正态分布，正态随机变量的大量出现不是偶然的，以后关于”中心极限定理”就可以从理论上解释这一点。</p>
+<p>附标准正态分布表格(来源百度图片)其中$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$，例如要想知道$\Phi(2.45)$，则查找表格，有$\Phi(2.45)=0.9929$</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1521620681978&amp;di=0a20fe11470e7eaeee6c7115c64e9cb7&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.chinawenben.com%2Fupload%2F1_3q2r3qv178q3ox18b112ob1a.jpg" alt="table"></p>
+<p><strong>三、指数分布</strong></p>
+<p>定义：如果随机变量的密度函数满足$\begin{eqnarray}f_X(x)=\begin{cases}\lambda e^{-\lambda x} &amp;x &gt; 0\\0 &amp;x \leq 0\end{cases}\end{eqnarray}$，其中$\lambda &gt; 0$，则称$X$服从参数为$\lambda$的指数分布。</p>
+<p>若$X$服从指数分布，则$P(a &lt; X &lt; b)=\lambda\int_a^b e^{-\lambda x} dx=e^{-\lambda a}-e^{-\lambda b},P(X &gt; a)=e^{-\lambda a},P(X &gt; 0)=1$。</p>
+<p>指数分布也具有无记忆性，看下述的定理：</p>
+<p><strong>定理：设$X$是取值为非负的随机变量，则对任何$s \ge 0,t \ge 0$，都有$P(X &gt; s+t | X &gt; s)=P(X &gt; t)$恒成立的充分必要条件是$X$服从指数分布</strong></p>
+<p>注意这个定理是一个充分必要条件，现只以充分性做以证明。</p>
+<p>证明：($\Leftarrow$)$P(X &gt; s+t | X &gt; s)=\frac{P(X &gt; (s+t))}{P(X &gt; s)}=\frac{e^{-\lambda (s+t)}}{e^{-\lambda s}}=e^{-\lambda t}=P(X &gt; t)$</p>
+<p>如果$X$满足指数分布，则有$E(X)=\frac{1}{\lambda},var(X)=\frac{1}{\lambda^2},m(t)=\frac{\lambda}{\lambda-t}$。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/概率论，数学/" rel="tag"># 概率论，数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/18/概率论笔记-二/" rel="next" title="概率论笔记(二)">
+                <i class="fa fa-chevron-left"></i> 概率论笔记(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="liyx" />
+            
+              <p class="site-author-name" itemprop="name">liyx</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xingkong225" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型随机变量的分布函数"><span class="nav-number">1.</span> <span class="nav-text">离散型随机变量的分布函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续型随机变量的分布函数"><span class="nav-number">2.</span> <span class="nav-text">连续型随机变量的分布函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liyx</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共18.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
