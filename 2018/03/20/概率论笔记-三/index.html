@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521620681978&di=0a20fe11470e7eaeee6c7115c64e9cb7&imgtype=0&src=http%3A%2F%2Fpic.chinawenben.com%2Fupload%2F1_3q2r3qv178q3ox18b112ob1a.jpg">
-<meta property="og:updated_time" content="2018-03-21T05:48:13.092Z">
+<meta property="og:updated_time" content="2018-03-21T15:19:19.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(三)">
 <meta name="twitter:description" content="写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。">
@@ -271,7 +271,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liyx">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://p5hdzn8xx.bkt.clouddn.com/IMG_20170402_163352.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,213
+                  4,233
                 </span>
               
 
@@ -390,7 +390,7 @@
 <a id="more"></a>
 <p>我们知道随机变量有离散型随机变量和连续型随机变量之分，因此分开来说明是有必要的。</p>
 <h2 id="离散型随机变量的分布函数"><a href="#离散型随机变量的分布函数" class="headerlink" title="离散型随机变量的分布函数"></a>离散型随机变量的分布函数</h2><p><strong>一、两点分布(又称伯努利分布)</strong></p>
-<p>定义：如果随机变量$X$的可能值是0和1且概率分布为，$P(X=1)=p,P(X=0)=1-p(0 \leq p \leq 1)$，则称$X$服从两点分布，也叫伯努利分布。</p>
+<p>定义：如果随机变量$X$的可能值是0和1且概率分布为$P(X=1)=p,P(X=0)=1-p(0 \leq p \leq 1)$，则称$X$服从两点分布，也叫伯努利分布。</p>
 <p>通常，我们也会将$1-p$写作$q$。有时，两点分布也会写成更加复杂也显得比较专业的形式，但是我们必须要知道以下的两种写法是与上方的定义是等价的。</p>
 <script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}p^x(1-p)^{1-x} &x=0或1\\0 & otherwise\end{cases}\end{eqnarray}</script><script type="math/tex; mode=display">f_X(x)=p^x(1-p)^{1-x}I_{\{0,1\}}(x)</script><p>如果$X$满足两点分布(伯努利分布)，我们有$E(X)=p,var(X)=pq,m(t)=pe^t+q$(还记得吗，$m(t)$是矩函数，如果忘记了可以去看看我的上一个笔记内容)</p>
 <p><strong>二、二项分布</strong></p>
@@ -400,7 +400,7 @@
 <p>如果随机变量$X$满足二项分布，则有$E(X)=np,var(X)=npq,m(t)=(q+pe^t)^n$。在这里计算的时候利用矩函数会更加方便一些。</p>
 <p>这里也给出二项分布的另几种表达方式。</p>
 <script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}\binom{n}{x}p^x q^{n-x} &x=0,1,2,\cdots,n\\0 &otherwise\end{cases}\end{eqnarray}</script><script type="math/tex; mode=display">f_X(x)=\binom{n}{x}p^xq^{n-x}I_{\{0,1,\cdots,n\}}(x)</script><p><strong>定理：令$p_n(k)=C_n^k p^k (1-p)^{n-k}$，则当$(n+1)p$不是整数时，$k &lt; (n+1)p$时，$p_n(k)$单调上升，当$k &gt; (n+1)p$时，$p_n(k)$单调下降。当$(n+1)p$是整数时，$p_n((n+1)p)=p_n((n+1)p-1)$，同样在其左侧单调上升，在其右侧单调下降。</strong></p>
-<p>据此，我们知道，$p_n(k)$作为$k$的函数先增后减，在[(n+1)p]处取得最大值，并且当$(n+1)p$是整数时，有两个最大值点，即(n+1)p=(n+1)p-1.</p>
+<p>据此，我们知道，$p_n(k)$作为$k$的函数先增后减，在$[(n+1)p]$处取得最大值，并且当$(n+1)p$是整数时，有两个最大值点，即$(n+1)p=(n+1)p-1$.</p>
 <p><strong>三、超几何分布</strong></p>
 <p>定义：若随机变量$X$的分布满足，$P(X=k)=\frac{C_D^{k}C_{N-D}^{n-k}}{C_N^n}$，则称$X$服从超几何分布。</p>
 <p>我们可以将公式这样理解，在共有$N$个产品中，一共有$D$个不合格的产品，现从中取出$n$个，则这$n$个产品中所含的不合格的产品数则是上述的离散型随机变量。</p>
@@ -420,7 +420,7 @@
 <p>对于几何分布，我们有$E(X)=\frac{q}{p},var(X)=\frac{q}{p^2},m(t)=\frac{p}{1-qe^t}$，其中$q=1-p$</p>
 <p>几何分布还有着一个十分有趣的性质(无后效性)：如果$X$是一个几何分布，那么就有$P(X \ge i+j | X \ge i)=P(X \ge j),i,j=0,1,2,\cdots$，也就是如果在前$i$次实验都没有成功的条件下，再至少进行$j$次实验才能成功的概率，与在没有任何条件下，至少经过$j$次实验才能成功的概率是相等的。换言之，若进行了$i$次实验都没有成功，那么需要至少再做$j$次实验才能成功的概率，不依赖于以前的实验，也就是说，将过去的记忆忘记了，就像实验重新开始一样，这种性质也叫作无后效性或者无记忆性。</p>
 <p><strong>六、负二项分布</strong></p>
-<p>定义：设随机变量$X$的取值范围是$(r,r+1,\cdots)$，(r是正整数)，且$P(X=k)=C_{k-1}{r-1}p^r(1-p)^{k-r}$，则称$X$满足负二项分布。</p>
+<p>定义：设随机变量$X$的取值范围是$(r,r+1,\cdots)$，(r是正整数)，且$P(X=k)=C_{k-1}^{r-1}p^r(1-p)^{k-r}$，则称$X$满足负二项分布。</p>
 <p>有些课本还会使用下方的表达式表示负二项分布，但是它们表示的意义是一样的，可以互相推导：</p>
 <script type="math/tex; mode=display">\begin{eqnarray}f_X(x)=\begin{cases}\binom{r+x-1}{x}p^r q^x=\binom{-r}{x}p^r (-q)^x &x=0,1,2,\cdots\\0 &otherwise\end{cases}\end{eqnarray}</script><p>在这里，如果$r=1$，则负二项分布就变成了几何分布。</p>
 <p>负二项分布的背景是，设某一个射击选手向一个目标连续进行射击，决心射中$r$次后停止，若他单次射击射中目标的概率是$0 &lt; p &lt; 1$，则他需要射击的次数就是一个随机变量，显然满足负二项分布的表达式。负二项分布的特点是最后一次发生的事件一定是成功的。</p>
@@ -441,7 +441,7 @@
 <p>我们可以看到，$P(c&lt;X&lt;d)=\frac{(d-c)}{(b-a)}$，这表明，$X$取值于$[a,b]$中任何小区间的概率与该小区间的长度成正比，而与该小区间的位置无关，这就是均匀分布的概率意义。例如去公共汽车站候车的时间就是均匀分布，因为出行者到达车站的时刻是随机的。</p>
 <p>对于均匀分布，我们有$E(X)=\frac{a+b}{2},var(X)=\frac{(b-a)^2}{12},m(t)=\frac{e^{bt}-e^{at}}{(b-a)t}$</p>
 <p>同时也不难求出其分布函数为$F_X(x)=\left(\frac{x-a}{b-a}\right)I_{[a,b]}(x) + I_{(b,\infty)}(x)$</p>
-<p>值得注意的是，在定义均匀分布时，我们指定小区间为一个闭区间，但是仍然可以定义在开区间以及半开半闭区间上的均匀分布，只不过这个时候的密度函数与原来是一样的。我们已经知道，改变区间内有限个点不会影响在该区间上积分的值，所以即使密度函数不一样，但是分布仍然是一样的。</p>
+<p>值得注意的是，在定义均匀分布时，我们指定小区间为一个闭区间，但是仍然可以定义在开区间以及半开半闭区间上的均匀分布，只不过这个时候的分布函数与原来是一样的，但是密度函数不一样，因为显然区间发生了变化。我们已经知道，改变区间内有限个点不会影响在该区间上积分的值，所以即使密度函数不一样，但是分布仍然是一样的。</p>
 <p><strong>二、正态分布</strong></p>
 <p>定义：如果随机变量的密度函数为</p>
 <script type="math/tex; mode=display">f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^2}{2\sigma^2}}</script><p>其中$\mu$是实数，$\sigma$是正数，则称$X$服从参数为$\mu, \sigma$的正态分布，记为$X \sim N(\mu, \sigma)$，正态分布也叫做高斯分布。</p>
@@ -449,7 +449,7 @@
 <p><img src="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg" alt="正态分布的图片"></p>
 <p>我们使用$\mu, \sigma$这些符号的原因是由于，已经被证明其中$\mu$就是均值，$\sigma^2$就是方差。</p>
 <p>当$\mu=0,\sigma^2=1$时的分布叫做标准正态分布，其密度函数是$f_X(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$，我们可以经过$y=\frac{x-\mu}{\sigma}$这种变换将正态分布转换成标准正态分布，并且已经证明了$A=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{-x^2}{2}} dx$的值为1，其中需要用到数学分析的知识，即将重积分化为累次积分，这个证明方法也是很巧妙地，读者应该会自己推导。</p>
-<p>通常的，我们使用$\phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}},\Phi(x)=\int_{-\infty}^{x}\phi(u) du$这种记法来表示标准正态密度及其分布函数。$\Phi(x)$有着一个十分不错的性质，即$\Phi(-x)=1-\Phi(x)$，我们应该知道，标准正态分布是一个很重要的概念，几乎所有的正态分布都可以由标准正态分布函数也就是$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$计算出来。(可见下面的定理)关于标准正态分布还有一个表格，因为我们几乎不可能将对所有的$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$积分值算出来，查阅表格是一个比较方便的事情。</p>
+<p>通常的，我们使用$\phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}},\Phi(x)=\int_{-\infty}^{x}\phi(u) du$这种记法来表示标准正态密度及其分布函数。$\Phi(x)$有着一个十分不错的性质，即$\Phi(-x)=1-\Phi(x)$，我们应该知道，标准正态分布是一个很重要的概念，几乎所有的正态分布都可以由标准正态分布函数也就是$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$计算出来(可见下面的定理)。关于标准正态分布还有一个表格，因为我们几乎不可能将对所有的$\Phi(x)=\int_{-\infty}^{x}\phi(u) du$积分值算出来，查阅表格是一个比较方便的事情。</p>
 <p>下面的定理表明，我们可以将任何正态分布的随机变量落在某一个区间上的概率转换到标准正态分布上。</p>
 <p><strong>定理：如果$X \sim N(\mu,\sigma^2)$，则有$P(a &lt; X &lt; b)=\Phi(\frac{b-\mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})$</strong></p>
 <p><strong>推论：设$X \sim N(\mu,\sigma^2)$，则对一切正数$k$，有$P(\mu-k\sigma &lt; X &lt; \mu+k\sigma)=2\Phi(k)-1$，这个推论可以从上述定理推导出来。</strong></p>
@@ -575,7 +575,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
+                src="http://p5hdzn8xx.bkt.clouddn.com/IMG_20170402_163352.jpg"
                 alt="liyx" />
             
               <p class="site-author-name" itemprop="name">liyx</p>
@@ -692,7 +692,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.6k字</span>
+  <span class="post-count">博客全站共18.9k字</span>
 </div>
 
         
