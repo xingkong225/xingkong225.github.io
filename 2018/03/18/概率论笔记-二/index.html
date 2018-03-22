@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="随机变量(不严格)定义：如果条件S下所有可能的结果组成集合$\Omega=\{\omega\},X=X(\omega)$是$\Omega$上有定义的实值函数，而且对于任何实数$c$，事件$\{\omega:X(\omega) \leq c \}$是有概率的，则称$X$是随机变量. (严格)定义：设$(\Omega,\mathcal{F},P)$是概率空间，$X=X(\omega)$是$\Omega">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T15:12:36.707Z">
+<meta property="og:updated_time" content="2018-03-22T04:56:22.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(二)">
 <meta name="twitter:description" content="随机变量(不严格)定义：如果条件S下所有可能的结果组成集合$\Omega=\{\omega\},X=X(\omega)$是$\Omega$上有定义的实值函数，而且对于任何实数$c$，事件$\{\omega:X(\omega) \leq c \}$是有概率的，则称$X$是随机变量. (严格)定义：设$(\Omega,\mathcal{F},P)$是概率空间，$X=X(\omega)$是$\Omega">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,035
+                  4,337
                 </span>
               
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16
+                  18
                 </span>
               
             </div>
@@ -472,6 +472,7 @@
 <h4 id="矩和矩函数"><a href="#矩和矩函数" class="headerlink" title="矩和矩函数"></a>矩和矩函数</h4><p><strong>定义：设$X$是随机变量，如果$E(X^r)$存在($r$是正整数)，则称$E(X^r)$是$X$的$r$阶原点矩。记为$\mu^{’}_r$</strong></p>
 <p><strong>定义：设$X$是随机变量如果$E(X)$存在且$E(X-E(X))^r$存在($r$是正整数)，则称$E(X-E(X))^r$为$X$的$r$阶中心矩。记为$\mu_r$</strong></p>
 <p>显然一阶原点矩$\mu^{’}_1=E(X)$，即为均值。一阶中心矩$\mu_1=E(X-E(X))=0$，且二阶中心矩$\mu_2=E(X-E(X))^2$即为方差。</p>
+<p>对于$r$阶中心矩，有一个很好的性质，即当$r$为奇数并且此时随机变量的密度函数$f_X(x)$关于期望值$E(X)$对称，则有$E((X-E(X))^r)=0$，如何理解这个式子呢？还记得怎么求随机变量函数的期望值吗，$E(g(X))=\int_{-\infty}^{\infty}g(x)f_X(x) dx$，其中$f_X(x)$是随机变量$X$的密度函数。则我们有$E((X-E(X))^r)=\int_{-\infty}^{\infty}((X-E(X))^r)f_X(x) dx$，若$f_X(x)$关于期望值对称并且$r$为奇数时，我们将这个被积函数即$((X-E(X))^r)f_X(x)$平移$E(X)$个单位，一定可以让这个函数关于$y$轴对称，并且此时被积函数是一个奇函数(奇函数乘以偶函数是奇函数)，则此时在整个实数轴上的积分必然为零！由于有了这样一个性质，我们可以知道，特别的，当$r=3$(奇数)时，如果$f_X(x)$关于期望值$E(X)$十分的对称，则此时$E((X-E(X))^r)$就是0，而若整体向右偏移时，$E((X-E(X))^r)$会大于0。由此引发了一下的定义。</p>
 <p>我们通常将$\alpha=\frac{\mu_3}{\sigma^3}$称为$X$的偏度系数，用来刻画随机变量取值关于均值的对称程度，(当$X$取值关于$E(X)$对称时$\alpha=0$)当分布左右对称时，$\alpha$为0，当分布左偏时，$\alpha$小于0，当分布右偏时，$\alpha$大于0；$\gamma=\frac{\mu_4}{\sigma^4}$称为$X$的峰度系数，若$X$有分布函数，则用来刻画分布函数曲线的陡峭程度。例如当$X \sim N(\mu,\sigma^2)$，则$\alpha=0,\gamma=3$。(其中$\sigma$是随机变量的标准差)</p>
 <p><strong>矩函数</strong>  若$X$是连续型随机变量，$f_X(x)$是其密度函数，且$e^{tX}$对于每一个$-h &lt; t &lt; h,h &gt; 0$的期望都存在，则$m(t)=E(e^{tX})=\int_{-\infty}^{\infty}e^{tx}f_X(x) dx$，若$X$是离散型随机变量，则$m(t)=E(e^{tX})=\sum\limits_{x}e^{tx}f_X(x)$。</p>
 <p>那么为什么要定义矩函数呢？</p>
@@ -710,7 +711,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.9k字</span>
+  <span class="post-count">博客全站共19.2k字</span>
 </div>
 
         
