@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p5hdzn8xx.bkt.clouddn.com/timg.jpg">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521620681978&di=0a20fe11470e7eaeee6c7115c64e9cb7&imgtype=0&src=http%3A%2F%2Fpic.chinawenben.com%2Fupload%2F1_3q2r3qv178q3ox18b112ob1a.jpg">
-<meta property="og:updated_time" content="2018-03-21T15:19:19.063Z">
+<meta property="og:updated_time" content="2018-03-22T13:54:53.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(三)">
 <meta name="twitter:description" content="写了这么多的理论知识，有必要将学过的各种分布函数系统地总结一下，并在总结的过程中回顾以前的知识，那么，我们开始吧。说明一点，以下我会用$f_X(x)$或者$p(x)$来表示随机变量的密度函数；使用$F_X(x)$或者$F(x)$来表示随机变量的分布函数。">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,233
+                  4,903
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17
+                  19
                 </span>
               
             </div>
@@ -474,12 +474,19 @@
 <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1521620681978&amp;di=0a20fe11470e7eaeee6c7115c64e9cb7&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.chinawenben.com%2Fupload%2F1_3q2r3qv178q3ox18b112ob1a.jpg" alt="table"></p>
 <p><strong>三、指数分布</strong></p>
 <p>定义：如果随机变量的密度函数满足$\begin{eqnarray}f_X(x)=\begin{cases}\lambda e^{-\lambda x} &amp;x &gt; 0\\0 &amp;x \leq 0\end{cases}\end{eqnarray}$，其中$\lambda &gt; 0$，则称$X$服从参数为$\lambda$的指数分布。</p>
-<p>若$X$服从指数分布，则$P(a &lt; X &lt; b)=\lambda\int_a^b e^{-\lambda x} dx=e^{-\lambda a}-e^{-\lambda b},P(X &gt; a)=e^{-\lambda a},P(X &gt; 0)=1$。</p>
+<p><strong>若$X$服从指数分布</strong>， 则有$P(a &lt; X &lt; b)=\lambda\int_a^b e^{-\lambda x} dx=e^{-\lambda a}-e^{-\lambda b}$<br>$P(X &gt; a)=e^{-\lambda a}$<br>$P(X &gt; 0)=1$</p>
 <p>指数分布也具有无记忆性，看下述的定理：</p>
 <p><strong>定理：设$X$是取值为非负的随机变量，则对任何$s \ge 0,t \ge 0$，都有$P(X &gt; s+t | X &gt; s)=P(X &gt; t)$恒成立的充分必要条件是$X$服从指数分布</strong></p>
 <p>注意这个定理是一个充分必要条件，现只以充分性做以证明。</p>
 <p>证明：($\Leftarrow$)$P(X &gt; s+t | X &gt; s)=\frac{P(X &gt; (s+t))}{P(X &gt; s)}=\frac{e^{-\lambda (s+t)}}{e^{-\lambda s}}=e^{-\lambda t}=P(X &gt; t)$</p>
-<p>如果$X$满足指数分布，则有$E(X)=\frac{1}{\lambda},var(X)=\frac{1}{\lambda^2},m(t)=\frac{\lambda}{\lambda-t}$。</p>
+<p><strong>如果$X$满足指数分布，</strong> 则有$E(X)=\frac{1}{\lambda}$<br>$var(X)=\frac{1}{\lambda^2}$<br>$m(t)=\frac{\lambda}{\lambda-t}$</p>
+<p>我们必须要知道泊松分布和指数分布之间有着很深的联系。</p>
+<p>之前已经说过了，泊松分布是用来描述具有固定频率的事件，在某段时间之内，会发生的概率。超市平均每天销售三箱牛奶、公司平均4分钟收到一个电话、公路上平均20分钟堵一次车，这些都是有着固定频率的随机事件，但是我要问你，接下来的一天中超市要卖出3箱牛奶的概率是多少，接下来十分钟都不堵车的概率是多少，接下来5分钟公司至少要收到5个电话的概率是多少，这些都可以用泊松分布来建立模型。</p>
+<p>那么指数分布指的是时间间隔的概率，即堵车的时间间隔、牛奶销售的时间间隔、收到电话的时间间隔。指数分布的公式可以从泊松分布推出来，如果公司下一个电话要时间间隔$t$，则等价于时间$t$之内没有一个电话打进来，$P(X &gt;t)=P(Z(t)=0)=\frac{e^{-vt}(vt)^0}{0!}=e^{-vt}$，反过来，事件在$t$之内发生的概率，就是$P(X \leq t)=1-e^{-vt}$。例如接下来十分钟公司会收到电话的概率是$P(X \leq 10)=1-e^{-10v}$，其中$v$是事件发生的频率，就像之前提到的公司平均4分钟收到一个电话。</p>
+<p>也就是说，泊松分布是指在一段时间之内，独立事件发生次数的概率，指数分布是指在一段时间之内，独立事件发生时间间隔的概率。</p>
+<p>现在我们知道了有哪些常见的随机变量的分布，这些变量之中有离散型的也有连续型的，那么在遇到具体问题时，一定要会知道到底题目在说的是哪种随机变量，然后思考它的特点及各种数字特征。</p>
+<p>现在回顾一下这些不同随机变量在不同分布中的取值。</p>
+<p><strong>伯努利分布</strong>只有两个值0或1；<strong>二项分布</strong>的值是非负的整数；<strong>超几何分布</strong>的值是非负的整数；<strong>离散均匀分布</strong>的值是正整数；<strong>几何分布</strong>的值是正整数；<strong>负二项分布</strong>的值是正整数；<strong>泊松分布</strong>的值是非负的整数；<strong>均匀分布</strong>的值是在任意的一个小区间中的任意实数；<strong>正态分布</strong>的值是任意实数；<strong>指数分布</strong>的值是任意的正数。</p>
 
       
     </div>
@@ -519,6 +526,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/关于伽马与贝塔函数/" rel="prev" title="关于伽马与贝塔函数">
+                关于伽马与贝塔函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -599,7 +610,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +713,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共19.2k字</span>
+  <span class="post-count">博客全站共20.1k字</span>
 </div>
 
         
