@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数学,解析几何," />
+  <meta name="keywords" content="概率论，数学," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近学习数学分析的时候，发现在多重积分这一章节里面有好多涉及到解析几何的问题，比如空间曲线的方程，现在总结一下，方便以后记忆。">
-<meta name="keywords" content="数学,解析几何">
+<meta name="description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
+<meta name="keywords" content="概率论，数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Analytic Geometry">
-<meta property="og:url" content="http://yoursite.com/2017/11/15/myFirst/index.html">
+<meta property="og:title" content="概率论笔记(四)">
+<meta property="og:url" content="http://yoursite.com/2018/03/23/概率论笔记-四/index.html">
 <meta property="og:site_name" content="Hello,world!">
-<meta property="og:description" content="最近学习数学分析的时候，发现在多重积分这一章节里面有好多涉及到解析几何的问题，比如空间曲线的方程，现在总结一下，方便以后记忆。">
+<meta property="og:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T12:22:30.709Z">
+<meta property="og:updated_time" content="2018-03-24T15:07:58.472Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Analytic Geometry">
-<meta name="twitter:description" content="最近学习数学分析的时候，发现在多重积分这一章节里面有好多涉及到解析几何的问题，比如空间曲线的方程，现在总结一下，方便以后记忆。">
+<meta name="twitter:title" content="概率论笔记(四)">
+<meta name="twitter:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/15/myFirst/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/23/概率论笔记-四/"/>
 
 
 
 
 
-  <title>Analytic Geometry | Hello,world!</title>
+  <title>概率论笔记(四) | Hello,world!</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/myFirst/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/概率论笔记-四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liyx">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Analytic Geometry</h1>
+          <h1 class="post-title" itemprop="name headline">概率论笔记(四)</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T21:41:23+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T10:02:01+08:00">
+                2018-03-23
               </time>
             
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,569
+                  1,278
                 </span>
               
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -393,59 +393,34 @@
       
 
       
-        <p>最近学习数学分析的时候，发现在多重积分这一章节里面有好多涉及到解析几何的问题，比如空间曲线的方程，现在总结一下，方便以后记忆。<br><a id="more"></a></p>
-<blockquote>
-<h3 id="柱面、锥面、旋转曲面与二次曲面"><a href="#柱面、锥面、旋转曲面与二次曲面" class="headerlink" title="柱面、锥面、旋转曲面与二次曲面"></a>柱面、锥面、旋转曲面与二次曲面</h3></blockquote>
-<h3 id="1-柱面"><a href="#1-柱面" class="headerlink" title="1.柱面"></a>1.柱面</h3><p>定义：在空间，由平行于定方向且与一条定曲线相交的一族平行直线所生成的曲面叫做<strong>柱面</strong>，定方向叫做柱面的<strong>方向</strong>，定曲线叫做柱面的<strong>准线</strong>，那组平行直线中的每一条直线，都叫做柱面的<strong>母线</strong>。  </p>
-<p>那么，如何判断一个面是不是柱面，我们有以下定理:</p>
-<p>定理1：在空间直角坐标系中，只含两个元（坐标）的三元方程是一个柱面，它的母线平行于所缺元（坐标）的同名坐标轴。  </p>
-<p>说白了，就是看似三元方程，实际上只有两元。例如F(x, y) = 0, G(y, z) = 0, H(x, z) = 0, 都表示柱面，他们的母线分别平行于z轴、x轴、y轴。</p>
-<p>因此，根据这个定理，我们可以得到</p>
-<p>$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</p>
-<p>$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$</p>
-<p>$y^2 = 2px$</p>
-<p>这些都代表了柱面。上面的三个公式我们在高中就已经熟悉，但是那只是在平面上来研究，如果我们放在空间直角坐标系里，上面的柱面与xOy坐标面的交线分别是椭圆、双曲线与抛物线。所以他们依次叫做<strong>椭圆柱面</strong>、<strong>双曲柱面</strong>、<strong>抛物柱面</strong>，它们的方程都是二次的，所以统称为<strong>二次柱面</strong>。</p>
-<h3 id="2-锥面"><a href="#2-锥面" class="headerlink" title="2.锥面"></a>2.锥面</h3><p>定义：在空间通过一定点且与定曲线相交的一族直线所生成的曲面叫做<strong>锥面</strong>，这些直线都叫做锥面的<strong>母线</strong>，那个定点叫做锥面的<strong>顶点</strong>，定曲线叫做锥面的<strong>准线</strong>。</p>
-<p>同样的，我们如何判断一个锥面呢，有以下定理：</p>
-<p>定理2：一个关于x, y, z的齐次方程总表示顶点在坐标原点的锥面。</p>
-<p>这里我们要注意:</p>
-<ol>
-<li>柱面和锥面都有准线和母线，柱面有方向，而锥面有顶点。</li>
-<li>关于齐次方程，课本上给的定义是：设 $\lambda$为实数，对于函数f(x, y, z)，如果有f(tx, ty, tz) = $t^\lambda$f(x, y, z)，其中t的取值应当使$t^\lambda$有确定的意义，那么f(x, y, z)叫做 $\lambda$次齐次函数，f(x, y, z) = 0叫做 $\lambda$次齐次方程。这个定义可以推广到n个变量的情况。我们可以看到，齐次函数就是如果我们把函数的每一个变量乘以一个同一个因子的话，其函数值变为原函数乘以这个因子的 $\lambda$次幂。</li>
-<li>不难理解，关于x - $x_0$, $y - y_0$, $z - z_0$的齐次方程表示顶点在($x_0$, $y_0$, $z_0$)的锥面。</li>
-<li>特别的，关于x, y, z的齐次方程可能只表示一个原点。即除了原点之外，曲面上再也没有其他的实点，例如$x^2 + y^2 + z^2 = 0$这样的曲面，我们把它叫做具有实顶点的虚锥面。</li>
-</ol>
-<h3 id="3-旋转曲面"><a href="#3-旋转曲面" class="headerlink" title="3.旋转曲面"></a>3.旋转曲面</h3><p>定义：在空间，一条曲线 $\Gamma$绕着定直线l旋转一周所生成的曲面叫做<strong>旋转曲面</strong>，或称<strong>回转曲面</strong>，曲线 $\Gamma$叫做旋转曲面的<strong>母线</strong>，定直线l叫做旋转曲面的<strong>旋转轴</strong>，简称为<strong>轴</strong>。</p>
-<blockquote>
-<p>对于旋转曲面上的任意一点 $M_1$在旋转是形成一个圆，这个圆也就是通过点 $M_1$且垂直于轴l的平面与旋转曲面的交线，叫做<strong>纬圆</strong>或称<strong>纬线</strong>。在通过旋转轴l的平面上，以l为边界的任意半曲面都与曲面交成一条曲线，这些曲线在旋转中显然都能彼此重合，这条曲线叫做旋转面的<strong>经线</strong>。</p>
-</blockquote>
-<p>特别的，将母线所在平面取坐标面，将旋转轴作为坐标轴，有以下规律。</p>
-<blockquote>
-<p>当坐标平面上的曲线 $\Gamma$绕此坐标平面的一个坐标轴旋转时，只需要将曲线在坐标面里的方程保留和旋转轴同名的坐标轴，而以其他两个坐标平方和的平方根来代替另一坐标。</p>
-</blockquote>
-<p>zoy平面里的曲线绕y轴旋转：</p>
-<p>$F(y, \pm \sqrt{x^2 + z^2}) = 0$</p>
-<p>zoy平面里的曲线绕z轴旋转：</p>
-<p>$F(\pm \sqrt{x^2 + y^2}, z) = 0$</p>
-<h3 id="下面写出几种旋转曲面的方程———"><a href="#下面写出几种旋转曲面的方程———" class="headerlink" title="下面写出几种旋转曲面的方程———"></a>下面写出几种旋转曲面的方程———</h3><p>长形旋转椭球面：$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{b^2} = 1$</p>
-<p>扁形旋转椭球面：$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{a^2} = 1$</p>
-<p>单叶旋转双曲面：$\frac{x^2}{b^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$</p>
-<p>双叶旋转双曲面：$\frac{y^2}{b^2} - \frac{x^2}{c^2} - \frac{z^2}{c^2} = 1$</p>
-<p>旋转抛物面：$x^2 + y^2 = 2pz$</p>
-<h3 id="4-椭球面"><a href="#4-椭球面" class="headerlink" title="4.椭球面"></a>4.椭球面</h3><p>椭球面的标准方程：$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$，其中a, b, c为任意的正常数，通常假定a &gt; b &gt; c。</p>
-<p>单叶双曲面标准方程：$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$，其中a, b, c为任意的正常数。</p>
-<blockquote>
-<p>注意：$\frac{x^2}{a^2} - \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$和$ - \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$</p>
-</blockquote>
-<p>双叶双曲面的标准方程：$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{a^2} = -1$，其中a, b, c为任意的正常数。</p>
-<blockquote>
-<p>注意：$\frac{x^2}{a^2} - \frac{y^2}{b^2} + \frac{z^2}{c^2} = -1$和$-\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = -1$</p>
-</blockquote>
-<p>椭圆抛物面的标准方程：$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 2z$，其中a, b是任意的正常数。</p>
-<p>双曲抛物面的标准方程：$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 2z$，其中a, b是任意的正常数。</p>
-<blockquote>
-<p>椭圆抛物面和双曲抛物面统称为<strong>抛物面</strong>，它们都没有对称中心，因此又叫做<strong>无心二次曲面</strong>。</p>
-</blockquote>
+        <p>下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。</p>
+<a id="more"></a>
+<h3 id="Gamma-分布"><a href="#Gamma-分布" class="headerlink" title="$\Gamma$分布"></a>$\Gamma$分布</h3><p>设$X$是一个随机变量，且满足$f_X(x)=\frac{\lambda}{\Gamma(r)}(\lambda x)^{r-1}e^{-\lambda x}I_{[0,\infty)}(x)$，其中$r,\lambda &gt; 0$，则称$X$满足$\Gamma$分布。</p>
+<p>显然当$r=1$时，$\Gamma$分布就是指数分布$\lambda e^{-\lambda x}$，$\lambda &gt; 0$。$\Gamma$分布可以看做是若干个指数分布相加。</p>
+<p>对于$\Gamma$我们有，$E(X)=\frac{r}{\lambda}, var(X)=\frac{r}{\lambda^2}, m(t)=\left(\frac{\lambda}{\lambda-t}\right)^r,(t &lt; \lambda)$，可以看到，与指数相应的数字特征很相似。</p>
+<p>$\Gamma$分布的分布函数是$F_X(x)=1-\sum\limits_{j=0}^{r-1}\frac{e^{-\lambda}(\lambda x)^j}{j!}$</p>
+<h3 id="B-分布"><a href="#B-分布" class="headerlink" title="$B$分布"></a>$B$分布</h3><p>设$X$是随机变量，并且满足$f_X(x)=\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}I_{(0,1)}(x)$，则称$X$满足$B$分布。</p>
+<p>显然，当$a=1,b=1$时，$B$分布就变成了<strong>均匀分布</strong>。</p>
+<p>如果$X$满足$B$分布，则有$E(X)=\frac{a}{a+b}, var(X)=\frac{ab}{(a+b+1)(a+b)^2}$</p>
+<p>在$B$分布中，如果$a=b$，则分布是对称的，如果$a&gt;b$，则分布主要靠右侧，如果$a&lt;b$，则主要靠左侧。</p>
+<p>$B$分布的分布函数是$F_X(x)=$</p>
+<h3 id="柯西分布"><a href="#柯西分布" class="headerlink" title="柯西分布"></a>柯西分布</h3><p>设$X$是随机变量，且满足$f_X(x)=\frac{1}{\pi \beta\{1+[\frac{(x-\alpha)}{\beta}]^2\}}$，其中，$\alpha$是是任意实数，$\beta$是正实数，则称$X$服从柯西分布，记作$X \sim C(\alpha,\beta)$</p>
+<p>在研究柯西分布时，我们通常会取成$\alpha=0,\beta=1$，因为如果我们做一个变换，，令$t=\frac{x-\alpha}{\beta}$，则任意的柯西分布都可以转换到$C(0,1)$上来，而$C(0,1)=\frac{1}{\pi(1+x^2)}$，这个函数是关于$y$轴对称的。特别的是：柯西分布是一个期望不存在的分布。</p>
+<p>柯西分布的分布函数是$F_X(x)=\frac{1}{2}+\frac{1}{\pi}\arctan\frac{x-\alpha}{\beta}$</p>
+<h3 id="对数正态分布"><a href="#对数正态分布" class="headerlink" title="对数正态分布"></a>对数正态分布</h3><p>设$X$是大于零的随机变量，$Y$也是一个随机变量且满足$Y=\ln X$，如果$Y$是一个正态分布，则称$X$是一个对数正态分布，且此时$X$的密度函数为$f_X(x)=\frac{1}{x\sqrt{2\pi}\sigma}e^{-\frac{1}{2\sigma^2}(\ln x - \mu)^2}I_{(0,\infty)}(x)$，$\mu$是任意实数，$\sigma$是正实数。</p>
+<p>对于对数正态分布，我们有$E(X)=e^{\mu+\frac{\sigma^2}{2}}, var(X)=e^{2\mu + 2\sigma^2}-e^{2\mu+\sigma^2}$，当然，$E(\ln(X))=\mu, var(\ln (X))=\sigma^2$。</p>
+<p>在什么情况下我们会需要用到对数正态分布呢？由于正态分布的数据是所有的实数，所以如果我们选取的样本数据都是正数的话，会和正态分布有差距，但是如果取了自然对数，就能够保证所有的数据可以铺满$x$轴。另一方面，根据对数的图像，我们可以知道，对数的图像更加的平滑，这样的图像更方便观察。</p>
+<h3 id="双指数分布"><a href="#双指数分布" class="headerlink" title="双指数分布"></a>双指数分布</h3><p>双指数分布也叫拉普拉斯分布，也可写作$DE$，即$Double exponential$，设$X$是随机变量，且满足$f_X(x)=\frac{1}{2\beta}e^{-\frac{|x-\alpha|}{\beta}}$。其中$\alpha$是任意实数$\beta$是正实数，则称$X$服从双指数分布。</p>
+<p>若$X$满足双指数分布，则有$E(X)=\alpha, var(X)=2\beta^2$</p>
+<h3 id="威布尔分布"><a href="#威布尔分布" class="headerlink" title="威布尔分布"></a>威布尔分布</h3><p>设$X$是一个随机变量，若$X$的密度函数为$f_X(x)=abx^{b-1}e^{-ax^b}I_{(0,\infty)}(x)$，其中$a,b &gt; 0$，则称$X$服从威布尔分布$(weibull distribution)$</p>
+<p>当$b=1$时，威布尔分布就是指数分布。</p>
+<h3 id="极值分布"><a href="#极值分布" class="headerlink" title="极值分布"></a>极值分布</h3><p>设$X$是一个随机变量，且其分布函数满足$F_X(x)=e^{-e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数，则称$X$满足极值分布。$(Gumble distribution)$</p>
+<h3 id="logistic-分布"><a href="#logistic-分布" class="headerlink" title="$logistic$分布"></a>$logistic$分布</h3><p>设$X$为随机变量，且其分布函数满足$F_X(x)=\frac{1}{1+e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数。</p>
+<p>若$X$满足$logistic$分布，则有$E(X)=\alpha, var(X)=\frac{\beta^2\pi^2}{3}$</p>
+<p>从以上的分布函数我们可以知道，$logistic$分布有一个性质：$F(\alpha-d)=1-F(\alpha+d)$，因此它的函数图像是关于$\alpha$对称的。这个分布在生态学中有着很重要的作用。</p>
+<h3 id="pareto-分布"><a href="#pareto-分布" class="headerlink" title="$pareto$分布"></a>$pareto$分布</h3><p>设$X$是随机变量，且满足$f_X(x)=\frac{\theta}{x_0}\left(\frac{x_0}{x}\right)^{\theta+1}I_{(x_0,\infty)}(x)$，其中$\theta &gt; 0, x_0 &gt; 0$</p>
+<p>若$X$满足$pareto$分布，则有$E(X)=\frac{\theta x_0}{\theta-1}, \theta &gt; 1, var(X)=\frac{\theta x_0^2}{\theta-2}-\left(\frac{\theta x_0}{\theta-1}\right)^2, \theta &gt; 2$，这个分布来源于经济学。</p>
+<p>这些是大致的内容，以后我会进行补充的，事实上这些内容理解了之后对数学建模具有很大的帮助。</p>
 
       
     </div>
@@ -463,9 +438,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数学/" rel="tag"># 数学</a>
-          
-            <a href="/tags/解析几何/" rel="tag"># 解析几何</a>
+            <a href="/tags/概率论，数学/" rel="tag"># 概率论，数学</a>
           
         </div>
       
@@ -478,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/webpack/" rel="next" title="Webpack----打包工具">
-                <i class="fa fa-chevron-left"></i> Webpack----打包工具
+              <a href="/2018/03/22/关于伽马与贝塔函数/" rel="next" title="关于伽马与贝塔函数">
+                <i class="fa fa-chevron-left"></i> 关于伽马与贝塔函数
               </a>
             
           </div>
@@ -487,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/19/vuejs/" rel="prev" title="vuejs">
-                vuejs <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#柱面、锥面、旋转曲面与二次曲面"><span class="nav-number">1.</span> <span class="nav-text">柱面、锥面、旋转曲面与二次曲面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-柱面"><span class="nav-number">2.</span> <span class="nav-text">1.柱面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-锥面"><span class="nav-number">3.</span> <span class="nav-text">2.锥面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-旋转曲面"><span class="nav-number">4.</span> <span class="nav-text">3.旋转曲面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面写出几种旋转曲面的方程———"><span class="nav-number">5.</span> <span class="nav-text">下面写出几种旋转曲面的方程———</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-椭球面"><span class="nav-number">6.</span> <span class="nav-text">4.椭球面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gamma-分布"><span class="nav-number">1.</span> <span class="nav-text">$\Gamma$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-分布"><span class="nav-number">2.</span> <span class="nav-text">$B$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柯西分布"><span class="nav-number">3.</span> <span class="nav-text">柯西分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数正态分布"><span class="nav-number">4.</span> <span class="nav-text">对数正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指数分布"><span class="nav-number">5.</span> <span class="nav-text">双指数分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#威布尔分布"><span class="nav-number">6.</span> <span class="nav-text">威布尔分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极值分布"><span class="nav-number">7.</span> <span class="nav-text">极值分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logistic-分布"><span class="nav-number">8.</span> <span class="nav-text">$logistic$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pareto-分布"><span class="nav-number">9.</span> <span class="nav-text">$pareto$分布</span></a></li></ol></div>
             
 
           </div>
