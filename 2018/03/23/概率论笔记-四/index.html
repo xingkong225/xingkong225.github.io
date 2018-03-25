@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-24T15:11:04.320Z">
+<meta property="og:image" content="http://p5hdzn8xx.bkt.clouddn.com/qq_pic_merged_1521959521722.jpg">
+<meta property="og:updated_time" content="2018-03-25T07:16:09.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(四)">
 <meta name="twitter:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
+<meta name="twitter:image" content="http://p5hdzn8xx.bkt.clouddn.com/qq_pic_merged_1521959521722.jpg">
 
 
 
@@ -356,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,278
+                  1,791
                 </span>
               
 
@@ -372,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -396,8 +398,12 @@
         <p>下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。</p>
 <a id="more"></a>
 <h3 id="Gamma-分布"><a href="#Gamma-分布" class="headerlink" title="$\Gamma$分布"></a>$\Gamma$分布</h3><p>设$X$是一个随机变量，且满足$f_X(x)=\frac{\lambda}{\Gamma(r)}(\lambda x)^{r-1}e^{-\lambda x}I_{[0,\infty)}(x)$，其中$r,\lambda &gt; 0$，则称$X$满足$\Gamma$分布。</p>
-<p>显然当$r=1$时，$\Gamma$分布就是指数分布$\lambda e^{-\lambda x}$，$\lambda &gt; 0$。$\Gamma$分布可以看做是若干个指数分布相加。</p>
-<p>对于$\Gamma$我们有，$E(X)=\frac{r}{\lambda}, var(X)=\frac{r}{\lambda^2}, m(t)=\left(\frac{\lambda}{\lambda-t}\right)^r,(t &lt; \lambda)$，可以看到，与指数相应的数字特征很相似。</p>
+<p>显然当$r=1$时，$\Gamma$分布就是指数分布$\lambda e^{-\lambda x}$，$\lambda &gt; 0$。由于指数分布具有无记忆性，在发生完第一个事件之后再发生一次，也是服从指数分布的，并且这两个事件的时间间隔是相互独立的，因此$\Gamma$分布可以看做若干个相互独立的都服从指数分布的随机变量的和。</p>
+<p>虽然正态分布发现的比较早，但是在研究金融、物理、生物等方面现象的时候，人们发现正态分布不太合适，因为这些随机变量的取值都是正的，而正态分布理论上可以取到任意的数$(-\infty,\infty)$，于是在经过很长时间之后，伽马分布就产生了。伽马分布在气象学中应用的比较多，比如干旱地区年季月的降水量服从伽马分布、指定时间段内的最大风速也被认为是服从伽马分布。</p>
+<p>例：用$N(t)$表示$[0,t]$时间段中放射性物质释放的$\alpha$粒子数，它已经被证明是服从泊松分布的。即$N(t) \sim \mathcal{P}(\lambda t)$其中$t$是任何时间，$\lambda$是频率。我们用$S_n$表示第$n$个粒子释放的时间，显然第一个粒子释放的时间是服从指数分布的。那么第$n$个粒子的释放时间就是服从伽马分布的，写作$S_n \sim \Gamma(n,\lambda)$，下面这张图可以很好的表现出伽马分布当$r$取不同值的时候图像的样子：</p>
+<p><img src="http://p5hdzn8xx.bkt.clouddn.com/qq_pic_merged_1521959521722.jpg" alt="伽马分布"></p>
+<p>可以看到，随着$r$的增长，伽马分布的图像越来越对称，实际上，当$r$的值大约是6的时候，就接近于正态分布了。</p>
+<p>对于$\Gamma$我们有，$E(X)=\frac{r}{\lambda}, var(X)=\frac{r}{\lambda^2}, m(t)=\left(\frac{\lambda}{\lambda-t}\right)^r,(t &lt; \lambda)$，可以看到，与指数分布相应的数字特征很相似。</p>
 <p>$\Gamma$分布的分布函数是$F_X(x)=1-\sum\limits_{j=0}^{r-1}\frac{e^{-\lambda}(\lambda x)^j}{j!}$</p>
 <h3 id="B-分布"><a href="#B-分布" class="headerlink" title="$B$分布"></a>$B$分布</h3><p>设$X$是随机变量，并且满足$f_X(x)=\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}I_{(0,1)}(x)$，则称$X$满足$B$分布。</p>
 <p>显然，当$a=1,b=1$时，$B$分布就变成了<strong>均匀分布</strong>。</p>
@@ -408,19 +414,20 @@
 <p>在研究柯西分布时，我们通常会取成$\alpha=0,\beta=1$，因为如果我们做一个变换，，令$t=\frac{x-\alpha}{\beta}$，则任意的柯西分布都可以转换到$C(0,1)$上来，而$C(0,1)=\frac{1}{\pi(1+x^2)}$，这个函数是关于$y$轴对称的。特别的是：柯西分布是一个期望不存在的分布。</p>
 <p>柯西分布的分布函数是$F_X(x)=\frac{1}{2}+\frac{1}{\pi}\arctan\frac{x-\alpha}{\beta}$</p>
 <h3 id="对数正态分布"><a href="#对数正态分布" class="headerlink" title="对数正态分布"></a>对数正态分布</h3><p>设$X$是大于零的随机变量，$Y$也是一个随机变量且满足$Y=\ln X$，如果$Y$是一个正态分布，则称$X$是一个对数正态分布，且此时$X$的密度函数为$f_X(x)=\frac{1}{x\sqrt{2\pi}\sigma}e^{-\frac{1}{2\sigma^2}(\ln x - \mu)^2}I_{(0,\infty)}(x)$，$\mu$是任意实数，$\sigma$是正实数。</p>
+<p>对数正态分布也是在研究产品的可靠性中最常用的一种分布，实践表明，在研究一些化学或者物理化学造成的一些设备失效，例如塑料或者绝缘体这些材质组成的物体，其寿命就服从对数正态分布。</p>
 <p>对于对数正态分布，我们有$E(X)=e^{\mu+\frac{\sigma^2}{2}}, var(X)=e^{2\mu + 2\sigma^2}-e^{2\mu+\sigma^2}$，当然，$E(\ln(X))=\mu, var(\ln (X))=\sigma^2$。</p>
-<p>在什么情况下我们会需要用到对数正态分布呢？由于正态分布的数据是所有的实数，所以如果我们选取的样本数据都是正数的话，会和正态分布有差距，但是如果取了自然对数，就能够保证所有的数据可以铺满$x$轴。另一方面，根据对数的图像，我们可以知道，对数的图像更加的平滑，这样的图像更方便观察。</p>
+<!-- 在什么情况下我们会需要用到对数正态分布呢？由于正态分布的数据是所有的实数，所以如果我们选取的样本数据都是正数的话，会和正态分布有差距，但是如果取了自然对数，就能够保证所有的数据可以铺满$x$轴。另一方面，根据对数的图像，我们可以知道，对数的图像更加的平滑，这样的图像更方便观察。 -->
 <h3 id="双指数分布"><a href="#双指数分布" class="headerlink" title="双指数分布"></a>双指数分布</h3><p>双指数分布也叫拉普拉斯分布，也可写作$DE$，即$Double exponential$，设$X$是随机变量，且满足$f_X(x)=\frac{1}{2\beta}e^{-\frac{|x-\alpha|}{\beta}}$。其中$\alpha$是任意实数$\beta$是正实数，则称$X$服从双指数分布。</p>
 <p>若$X$满足双指数分布，则有$E(X)=\alpha, var(X)=2\beta^2$</p>
 <h3 id="威布尔分布"><a href="#威布尔分布" class="headerlink" title="威布尔分布"></a>威布尔分布</h3><p>设$X$是一个随机变量，若$X$的密度函数为$f_X(x)=abx^{b-1}e^{-ax^b}I_{(0,\infty)}(x)$，其中$a,b &gt; 0$，则称$X$服从威布尔分布$(weibull distribution)$</p>
 <p>当$b=1$时，威布尔分布就是指数分布。</p>
+<p>威布尔分布也是常见的一类分布，一般来说，由金属构造的仪器或者是设备都被认为是服从威布尔分布。它是由指数分布来的，因为指数分布具有无记忆性，也就是说，服从指数分布的一个设备用了几年之后还是新的。实际中我们并不会遇到这种情况，但是理论上它又服从指数分布，所以我们将指数分布进行改造。先令$X$服从参数为1的指数分布，则$Y=\left(\frac{X}{a}\right)^{\frac{1}{b}}$服从参数为$a,b$威布尔分布，读者可以试着自己验证这一点。</p>
 <h3 id="极值分布"><a href="#极值分布" class="headerlink" title="极值分布"></a>极值分布</h3><p>设$X$是一个随机变量，且其分布函数满足$F_X(x)=e^{-e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数，则称$X$满足极值分布。$(Gumble distribution)$</p>
 <h3 id="logistic-分布"><a href="#logistic-分布" class="headerlink" title="$logistic$分布"></a>$logistic$分布</h3><p>设$X$为随机变量，且其分布函数满足$F_X(x)=\frac{1}{1+e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数。</p>
 <p>若$X$满足$logistic$分布，则有$E(X)=\alpha, var(X)=\frac{\beta^2\pi^2}{3}$</p>
 <p>从以上的分布函数我们可以知道，$logistic$分布有一个性质：$F(\alpha-d)=1-F(\alpha+d)$，因此它的函数图像是关于$\alpha$对称的。这个分布在生态学中有着很重要的作用。</p>
 <h3 id="pareto-分布"><a href="#pareto-分布" class="headerlink" title="$pareto$分布"></a>$pareto$分布</h3><p>设$X$是随机变量，且满足$f_X(x)=\frac{\theta}{x_0}\left(\frac{x_0}{x}\right)^{\theta+1}I_{(x_0,\infty)}(x)$，其中$\theta &gt; 0, x_0 &gt; 0$</p>
 <p>若$X$满足$pareto$分布，则有$E(X)=\frac{\theta x_0}{\theta-1}, \theta &gt; 1, var(X)=\frac{\theta x_0^2}{\theta-2}-\left(\frac{\theta x_0}{\theta-1}\right)^2, \theta &gt; 2$，这个分布来源于经济学。</p>
-<p>这些是大致的内容，以后我会进行补充的，事实上这些内容理解了之后对数学建模具有很大的帮助。</p>
 
       
     </div>
@@ -647,7 +654,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.1k字</span>
+  <span class="post-count">博客全站共24.7k字</span>
 </div>
 
         
