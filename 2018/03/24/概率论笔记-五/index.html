@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="随机向量在定义随机向量之前，我们先来回顾一下随机变量的数学定义。如果$(\Omega,\mathcal{F},P)$是一个概率空间，$X(\omega)$是定义在$\Omega$上并且取值为一条直线的函数，并且这个函数小于等于任何一个数是一个事件，而且这个事件是在$\mathcal{F}$中，并且$P$是$\mathcal{F}$上的一个函数，叫做概率。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T05:06:14.937Z">
+<meta property="og:updated_time" content="2018-03-25T13:55:06.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(五)">
 <meta name="twitter:description" content="随机向量在定义随机向量之前，我们先来回顾一下随机变量的数学定义。如果$(\Omega,\mathcal{F},P)$是一个概率空间，$X(\omega)$是定义在$\Omega$上并且取值为一条直线的函数，并且这个函数小于等于任何一个数是一个事件，而且这个事件是在$\mathcal{F}$中，并且$P$是$\mathcal{F}$上的一个函数，叫做概率。">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,377
+                  2,908
                 </span>
               
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  12
                 </span>
               
             </div>
@@ -427,12 +427,20 @@
 <p>$P(X_1=x_1,X_2=x_2)=\frac{n!}{x_{1}! x_{2}! (n-x_1-x_2)!}p_1^{x_1}p_2^{x_2}(1-p_1-p_2)^{n-x_1-x_2}$</p>
 <h3 id="连续型随机向量"><a href="#连续型随机向量" class="headerlink" title="连续型随机向量"></a>连续型随机向量</h3><p>先只考虑二维的情况。</p>
 <p>定义：对于随机向量$(X,Y)$，如果有一个定义在$R^2$上的非负函数$f(x,y)$，对任何的$a&lt;b,c&lt;d$都有$P(a&lt;X \leq b,c&lt;Y \leq d)=\iint\limits_{D}f(x,y)dxdy$，其中$D=\{(x,y):a&lt;X \leq b,c&lt;Y \leq d\}$，则称$(X,Y)$为连续型随机向量，称$f(x,y)$为随机向量的联合密度函数，记作$(X,Y) \sim f(x,y)$。</p>
-<p>当然对于这个定义，课本中也把它写作如下的形式，我们必须知道这两种是等价定义，就像对连续型随机变量的密度函数定义的那样。</p>
-<p>定义：对于随机向量$(X,Y)$，如果有一个定义在$R^2$上的非负函数$f(x,y)$，有$F_{X,Y}(x,y)=\int_{-\infty}^x \int_{-\infty}^y f(u,v)dudv$，则称$(X,Y)$为连续型随机向量，并称$f(x,y)$为随机向量的联合密度函数。</p>
 <p>注意，由于对于二重积分来说，在一个面积为0的区域上的积分仍然是0，因此，上述定义中的区域$D$可以是闭区间，也可以是开区间，这些都是等价的。上述等式的意义在于，如果在平面上有一个矩形区域，则随机向量落在这个矩形区域上的概率是以这个矩形区域为底，以随机向量的密度函数为顶的一个柱体的体积。可以证明对任何的子区域(不一定是矩形的)，都有$P((x,y) \in D)=\iint\limits_{D}f(x,y)dxdy=\iint f(x,y)I(D)dxdy$，其中$I(D)$为$D$的示性函数。</p>
+<p>在求重积分的时候，在大部分情况下都可以将重积分化为累次积分来计算。</p>
+<p>当然对于这个定义，课本中也把它写作如下的形式，我们必须知道这两种是等价定义，就像对连续型随机变量的密度函数定义的那样。</p>
+<p><strong>定义：对于随机向量$(X,Y)$，如果有一个定义在$R^2$上的非负函数$f(x,y)$，有$F_{X,Y}(x,y)=\int_{-\infty}^x \int_{-\infty}^y f(u,v)dudv$，则称$(X,Y)$为连续型随机向量，并称$f(x,y)$为随机向量的联合密度函数。</strong></p>
+<p>因此，若给出一个密度函数，我们可以由$F_{X,Y}(x,y)=\int_{-\infty}^x \int_{-\infty}^y f(u,v)dudv$推出随机向量的分布函数，反之，给出一个分布函数可以对其求二阶混合偏导数求得密度函数，即$f_{X,Y}(x,y)=\frac{\partial ^2 F_{X,Y}(x,y)}{\partial x \partial y}$，这个就是下面的定理：</p>
+<p><strong>定理：如果$(X,Y)$的联合分布函数$F(x,y)$在开集$D$上具有连续的二阶混合偏导数，且$P((x,y) \in D)=1$，则$(X,Y)$是连续型随机向量，且此时有$\begin{eqnarray}f_{X,Y}(x,y)=\begin{cases}\frac{\partial ^2 F_{X,Y}(x,y)}{\partial x \partial y} &amp;(x,y) \in D\\0 &amp;otherwise\end{cases}\end{eqnarray}$</strong></p>
+<p>将上述二维随机向量进行推广，便得到了$k$维连续型随机向量。</p>
+<p><strong>定义：</strong> 设$\vec{X}=(X_1,X_2\cdots,X_k)$是随机向量，如果存在一个$k$元的非负函数$f_{X_1,X_2,\cdots,X_k}(x_1,x_2,\cdots,x_k)$并且满足$F_{X_1,X_2,\cdots,X_k}(x_1,x_2,\cdots,x_k)=\int_{-\infty}^{x_k}\cdot\int_{-\infty}^{x_1}f_{X_1,X_2,\cdots,X_k}(u_1,u_2,\cdots,u_k)du_1 \cdots du_k$，对于任意的$(x_1,x_2,\cdots,x_k)$，则称$\vec{X}$是连续型随机变量，称$f_{X_1,X_2,\cdots,X_k}(x_1,x_2,\cdots,x_k)$为$\vec{X}$的联合密度函数。</p>
+<p><strong>联合密度函数具有以下的性质：</strong></p>
+<p>(1) $f_{X_1,X_2,\cdots,X_k}(x_1,x_2,\cdots,x_k) \ge 0;$</p>
+<p>(2) $\int_{-\infty}^{x_k}\cdot\int_{-\infty}^{x_1}f_{X_1,X_2,\cdots,X_k}(x_1,x_2,\cdots,x_k)dx_1 \cdots dx_k = 1;$</p>
 <p>连续型随机向量的边缘分布与离散型随机向量边缘分布的定义是一样的。</p>
 <p>如果$(X,Y) \sim f(x,y)$，则关于$X$的边缘密度函数是$f_X(x)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)dy$，关于$Y$的边缘密度函数是$f_Y(y)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)dx$。这两个公式是很好记的，要求$X$的密度函数，将$y$积掉即可，反之也是这样。</p>
-<p>我们可以看出，如果$(X,Y)$是连续型随机向量，则$X$和$Y$都是连续型的随机变量，且它们的密度函数由联合密度函数唯一决定。但是反之，如果对于连续型随机变量$X$和$Y$，它们都有密度函数，我们能不能找出一个连续型随机变量$(X,Y)$的联合密度函数呢。</p>
+<p>我们可以看出，如果$(X,Y)$是连续型随机向量，则$X$和$Y$都是连续型的随机变量，且它们的密度函数由联合密度函数唯一决定。但是反之，如果对于连续型随机变量$X$和$Y$，它们都有密度函数，我们能不能找出一个连续型随机向量$(X,Y)$的联合密度函数呢，结论是不一定，因为如果$X$的密度函数是$f(x)$，且$Y$与$X$取值处处一样，则$f_{X,Y}(x,y)$只能在一条直线上取值，因此在三维空间中找不到一个曲面$f_{X,Y}(x,y)$，因此无法求得$X,Y$的联合密度函数，请注意到此时$X$和$Y$之间有着函数关系。但是特别的，<strong>当$X$和$Y$互相独立的时候可以由边缘分布决定联合分布。</strong> 这一点之后会进行研究。</p>
 
       
     </div>
@@ -655,7 +663,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共25.0k字</span>
+  <span class="post-count">博客全站共25.5k字</span>
 </div>
 
         
