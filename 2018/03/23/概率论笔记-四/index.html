@@ -88,7 +88,7 @@
 <meta property="og:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p5hdzn8xx.bkt.clouddn.com/qq_pic_merged_1521959521722.jpg">
-<meta property="og:updated_time" content="2018-03-25T07:16:09.224Z">
+<meta property="og:updated_time" content="2018-03-25T07:27:38.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(四)">
 <meta name="twitter:description" content="下面说几种比较麻烦的几种分布， 上一篇文章也是为了这一次作了铺垫，如果哪里有不明白的可以去上一篇看一下。这一篇文章主要内容有，$\Gamma$分布与$B$分布、柯西分布、对数正态分布、拉普拉斯分布(也叫双指数分布)、威布尔分布、极值分布、$Pareto$分布、$Logistic$分布。">
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,791
+                  1,819
                 </span>
               
 
@@ -417,11 +417,12 @@
 <p>对数正态分布也是在研究产品的可靠性中最常用的一种分布，实践表明，在研究一些化学或者物理化学造成的一些设备失效，例如塑料或者绝缘体这些材质组成的物体，其寿命就服从对数正态分布。</p>
 <p>对于对数正态分布，我们有$E(X)=e^{\mu+\frac{\sigma^2}{2}}, var(X)=e^{2\mu + 2\sigma^2}-e^{2\mu+\sigma^2}$，当然，$E(\ln(X))=\mu, var(\ln (X))=\sigma^2$。</p>
 <!-- 在什么情况下我们会需要用到对数正态分布呢？由于正态分布的数据是所有的实数，所以如果我们选取的样本数据都是正数的话，会和正态分布有差距，但是如果取了自然对数，就能够保证所有的数据可以铺满$x$轴。另一方面，根据对数的图像，我们可以知道，对数的图像更加的平滑，这样的图像更方便观察。 -->
-<h3 id="双指数分布"><a href="#双指数分布" class="headerlink" title="双指数分布"></a>双指数分布</h3><p>双指数分布也叫拉普拉斯分布，也可写作$DE$，即$Double exponential$，设$X$是随机变量，且满足$f_X(x)=\frac{1}{2\beta}e^{-\frac{|x-\alpha|}{\beta}}$。其中$\alpha$是任意实数$\beta$是正实数，则称$X$服从双指数分布。</p>
-<p>若$X$满足双指数分布，则有$E(X)=\alpha, var(X)=2\beta^2$</p>
 <h3 id="威布尔分布"><a href="#威布尔分布" class="headerlink" title="威布尔分布"></a>威布尔分布</h3><p>设$X$是一个随机变量，若$X$的密度函数为$f_X(x)=abx^{b-1}e^{-ax^b}I_{(0,\infty)}(x)$，其中$a,b &gt; 0$，则称$X$服从威布尔分布$(weibull distribution)$</p>
 <p>当$b=1$时，威布尔分布就是指数分布。</p>
 <p>威布尔分布也是常见的一类分布，一般来说，由金属构造的仪器或者是设备都被认为是服从威布尔分布。它是由指数分布来的，因为指数分布具有无记忆性，也就是说，服从指数分布的一个设备用了几年之后还是新的。实际中我们并不会遇到这种情况，但是理论上它又服从指数分布，所以我们将指数分布进行改造。先令$X$服从参数为1的指数分布，则$Y=\left(\frac{X}{a}\right)^{\frac{1}{b}}$服从参数为$a,b$威布尔分布，读者可以试着自己验证这一点。</p>
+<p>威布尔分布和对数正态分布用来表示人的寿命要比正态分布合适。</p>
+<h3 id="双指数分布"><a href="#双指数分布" class="headerlink" title="双指数分布"></a>双指数分布</h3><p>双指数分布也叫拉普拉斯分布，也可写作$DE$，即$Double exponential$，设$X$是随机变量，且满足$f_X(x)=\frac{1}{2\beta}e^{-\frac{|x-\alpha|}{\beta}}$。其中$\alpha$是任意实数$\beta$是正实数，则称$X$服从双指数分布。</p>
+<p>若$X$满足双指数分布，则有$E(X)=\alpha, var(X)=2\beta^2$</p>
 <h3 id="极值分布"><a href="#极值分布" class="headerlink" title="极值分布"></a>极值分布</h3><p>设$X$是一个随机变量，且其分布函数满足$F_X(x)=e^{-e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数，则称$X$满足极值分布。$(Gumble distribution)$</p>
 <h3 id="logistic-分布"><a href="#logistic-分布" class="headerlink" title="$logistic$分布"></a>$logistic$分布</h3><p>设$X$为随机变量，且其分布函数满足$F_X(x)=\frac{1}{1+e^{\frac{-(x-\alpha)}{\beta}}}$，其中$\beta &gt; 0, \alpha$是任意实数。</p>
 <p>若$X$满足$logistic$分布，则有$E(X)=\alpha, var(X)=\frac{\beta^2\pi^2}{3}$</p>
@@ -616,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gamma-分布"><span class="nav-number">1.</span> <span class="nav-text">$\Gamma$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-分布"><span class="nav-number">2.</span> <span class="nav-text">$B$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柯西分布"><span class="nav-number">3.</span> <span class="nav-text">柯西分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数正态分布"><span class="nav-number">4.</span> <span class="nav-text">对数正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指数分布"><span class="nav-number">5.</span> <span class="nav-text">双指数分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#威布尔分布"><span class="nav-number">6.</span> <span class="nav-text">威布尔分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极值分布"><span class="nav-number">7.</span> <span class="nav-text">极值分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logistic-分布"><span class="nav-number">8.</span> <span class="nav-text">$logistic$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pareto-分布"><span class="nav-number">9.</span> <span class="nav-text">$pareto$分布</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gamma-分布"><span class="nav-number">1.</span> <span class="nav-text">$\Gamma$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-分布"><span class="nav-number">2.</span> <span class="nav-text">$B$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柯西分布"><span class="nav-number">3.</span> <span class="nav-text">柯西分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数正态分布"><span class="nav-number">4.</span> <span class="nav-text">对数正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#威布尔分布"><span class="nav-number">5.</span> <span class="nav-text">威布尔分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指数分布"><span class="nav-number">6.</span> <span class="nav-text">双指数分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极值分布"><span class="nav-number">7.</span> <span class="nav-text">极值分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logistic-分布"><span class="nav-number">8.</span> <span class="nav-text">$logistic$分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pareto-分布"><span class="nav-number">9.</span> <span class="nav-text">$pareto$分布</span></a></li></ol></div>
             
 
           </div>
@@ -654,7 +655,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.7k字</span>
+  <span class="post-count">博客全站共25.0k字</span>
 </div>
 
         

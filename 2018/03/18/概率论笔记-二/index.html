@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hello,world!">
 <meta property="og:description" content="随机变量(不严格)定义：如果条件S下所有可能的结果组成集合$\Omega=\{\omega\},X=X(\omega)$是$\Omega$上有定义的实值函数，而且对于任何实数$c$，事件$\{\omega:X(\omega) \leq c \}$是有概率的，则称$X$是随机变量. (严格)定义：设$(\Omega,\mathcal{F},P)$是概率空间，$X=X(\omega)$是$\Omega">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T04:56:22.443Z">
+<meta property="og:updated_time" content="2018-03-25T07:31:19.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论笔记(二)">
 <meta name="twitter:description" content="随机变量(不严格)定义：如果条件S下所有可能的结果组成集合$\Omega=\{\omega\},X=X(\omega)$是$\Omega$上有定义的实值函数，而且对于任何实数$c$，事件$\{\omega:X(\omega) \leq c \}$是有概率的，则称$X$是随机变量. (严格)定义：设$(\Omega,\mathcal{F},P)$是概率空间，$X=X(\omega)$是$\Omega">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,337
+                  4,409
                 </span>
               
 
@@ -437,6 +437,7 @@
 <p>我们都可以看出来，无论是连续型随机变量还是离散型随机变量，密度函数都可以由分布函数推导出来，反之亦然。但是严谨的说，离散型的和连续型的密度函数还是有差距的，对于离散型随机变量$P(X=x)=f_X(x)$，但是对于连续型随机变量$P(X=x)=0$，可参照连续型随机变量的定义来证明这一点。并且对于离散型随机变量，有$f_X(x_j)=F_X(x_j)-\lim\limits_{0 &lt; h \rightarrow 0}F_X(x_j-h)$，也可以理解为$P(X=X_j)=P(\bigcap\limits_{n=1}^{\infty}(x_j-\frac{1}{n}) &lt; X \leq x_j)$，对于连续型随机变量，有$f_X(x)=\frac{dF_X(x)}{dx}=\lim\limits_{\Delta \rightarrow 0}\frac{F_X(x+\Delta x)-F_X(x-\Delta x)}{2\Delta x}$,$f_X(x)2\Delta x\approx F_X(x+\Delta x)-F_X(x-\Delta x)=P(x-\Delta &lt; X \leq x+\Delta x)$，也就是说，对于连续型随机变量，在一个小的区间里发生的概率，大约等于其密度函数乘以小区间的长度。但是，我们仍然不加区分的称这两种随机变量的密度函数为”密度函数”。</p>
 <p>注意一点，我们在数学分析中已经学过，改变一个区间中有限个点的函数值，不影响在这个区间上对应函数的积分值，由此可以知道，对于连续型随机变量来说，即使有的时候密度函数不一样，但是其分布函数有可能会相同。比如下面这个例子：</p>
 <p>令分布函数是$F_X(x)=xI_{[0,1)}(x)+I_{[1,\infty)}(x)$，则其密度函数为$f_{X}(x)=I_{(0,1)}(x)$，但是$f_X(x)=I_{(0,\frac{1}{2})}(x)+69I_{\{\frac{1}{2}\}}(x)+I_{(\frac{1}{2},1)}(x)$依然是满足这个分布函数的。我们可以使用$F_X(x) = \int_{-\infty}^x f_X(u) du$这个式子进行验证。</p>
+<p>如果$X$是连续型随机变量，则有$P(X=a)=0$，即在任何一点取值的概率是0，所以$P((a,b))=P((a,b])=P([a,b))=P([a,b])$，即连续型随机变量在一个区间上取值就没有必要考虑端点的问题。</p>
 <h4 id="期望和方差"><a href="#期望和方差" class="headerlink" title="期望和方差"></a>期望和方差</h4><p>期望也叫均值，用来刻画随机变量取值的平均水平。</p>
 <p>对于离散型随机变量，令$p_k=P(X=x_k)$，$X$可能的取值是$x_1,x_2,\cdots$(有限个或者可列无穷个)，则称和式$\sum\limits_k x_k p_k$为$X$的数学期望(简称期望或者均值)，记为$E(X)$或$EX$，当$x_1,x_2,\cdots$是无穷序列时，$\sum\limits_{k=1}^{\infty} x_k p_k$记为$X$的期望，此时恒假定这个级数是绝对收敛的，即$\sum\limits_{k=1}^{\infty} |x_k|p_k$收敛。</p>
 <p>对于连续型随机变量，设其有概率密度函数$p(x)$，且积分$\int_{-\infty}^{\infty} |x|p(x) dx$收敛，则$E(X)$存在，且$E(x)=\int_{-\infty}^{\infty} xp(x) dx$。</p>
@@ -711,7 +712,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.7k字</span>
+  <span class="post-count">博客全站共25.0k字</span>
 </div>
 
         
