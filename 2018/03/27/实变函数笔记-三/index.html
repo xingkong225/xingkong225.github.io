@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="概率论，数学," />
+  <meta name="keywords" content="数学,实变函数," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="离散型条件分布定义：令$(X,Y)$是离散型随机向量，并且有密度函数$f_{X,Y}(x,y)$，则用$f_{Y|X}(y|x)$表示在给定$X=x$时，$Y$的条件分布，且有$f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}$，其中$f_X(x) &amp;gt; 0$是$X$的边缘分">
-<meta name="keywords" content="概率论，数学">
+<meta name="description" content="上一篇有一些定理没有给出证明，我先把今天的笔记整理一下。">
+<meta name="keywords" content="数学,实变函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论笔记(六)">
-<meta property="og:url" content="http://yoursite.com/2018/03/26/概率论笔记-六/index.html">
+<meta property="og:title" content="实变函数笔记(三)">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/实变函数笔记-三/index.html">
 <meta property="og:site_name" content="Hello,world!">
-<meta property="og:description" content="离散型条件分布定义：令$(X,Y)$是离散型随机向量，并且有密度函数$f_{X,Y}(x,y)$，则用$f_{Y|X}(y|x)$表示在给定$X=x$时，$Y$的条件分布，且有$f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}$，其中$f_X(x) &amp;gt; 0$是$X$的边缘分布。 相似的，在给定$Y=y$时，$X$的条件分布是$f_{X|Y}(x|y)=\fr">
+<meta property="og:description" content="上一篇有一些定理没有给出证明，我先把今天的笔记整理一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-26T14:41:03.578Z">
+<meta property="og:updated_time" content="2018-03-27T13:08:05.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率论笔记(六)">
-<meta name="twitter:description" content="离散型条件分布定义：令$(X,Y)$是离散型随机向量，并且有密度函数$f_{X,Y}(x,y)$，则用$f_{Y|X}(y|x)$表示在给定$X=x$时，$Y$的条件分布，且有$f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}$，其中$f_X(x) &amp;gt; 0$是$X$的边缘分布。 相似的，在给定$Y=y$时，$X$的条件分布是$f_{X|Y}(x|y)=\fr">
+<meta name="twitter:title" content="实变函数笔记(三)">
+<meta name="twitter:description" content="上一篇有一些定理没有给出证明，我先把今天的笔记整理一下。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/26/概率论笔记-六/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/27/实变函数笔记-三/"/>
 
 
 
 
 
-  <title>概率论笔记(六) | Hello,world!</title>
+  <title>实变函数笔记(三) | Hello,world!</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/概率论笔记-六/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/实变函数笔记-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liyx">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">概率论笔记(六)</h1>
+          <h1 class="post-title" itemprop="name headline">实变函数笔记(三)</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T12:30:34+08:00">
-                2018-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T15:40:38+08:00">
+                2018-03-27
               </time>
             
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  425
+                  2,061
                 </span>
               
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  10
                 </span>
               
             </div>
@@ -393,15 +393,52 @@
       
 
       
-        <a id="more"></a>
-<h3 id="离散型条件分布"><a href="#离散型条件分布" class="headerlink" title="离散型条件分布"></a>离散型条件分布</h3><p>定义：令$(X,Y)$是离散型随机向量，并且有密度函数$f_{X,Y}(x,y)$，则用$f_{Y|X}(y|x)$表示在给定$X=x$时，$Y$的条件分布，且有$f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}$，其中$f_X(x) &gt; 0$是$X$的边缘分布。</p>
-<p>相似的，在给定$Y=y$时，$X$的条件分布是$f_{X|Y}(x|y)=\frac{f_{X,Y}(x,y)}{f_Y(y)}, f_Y(y) &gt; 0$</p>
-<p>对于$Y$的条件分布，显然有$\sum\limits_{j}f_{Y|X}(y_{j}|x)=1$，$F_{Y|X}(y|x)=\sum\limits_{\{j:y_{j} \leq y\}}f_{Y|X}(y_{j}|x)$</p>
-<h3 id="连续型条件分布"><a href="#连续型条件分布" class="headerlink" title="连续型条件分布"></a>连续型条件分布</h3><p>定义：令$(X,Y)$是连续型随机向量，并且有密度函数$f_{X,Y}(x,y)$，则用$f_{Y|X}(y|x)$表示在给定$X=x$时，$Y$的条件分布，且有$f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}$，其中$f_X(x) &gt; 0$是$X$的边缘分布。</p>
-<p>相似的，在给定$Y=y$时，$X$的条件分布是$f_{X|Y}(x|y)=\frac{f_{X,Y}(x,y)}{f_Y(y)}, f_Y(y) &gt; 0$</p>
-<p>这个看上去跟离散型随机向量条件分布没有什么区别，实际上也没有什么区别，只不过一个是求和，一个是积分，对于连续型随机向量的边缘分布，不要忘记这两个公式$f_X(x)=\int_{-\infty}^{\infty}f_{X,Y}(x,y) dy, f_Y(y)=\int_{-\infty}^{\infty}f_{X,Y}(x,y) dx$</p>
-<p>同样的，我们也能得出这样的结论：$\int_{-\infty}^{\infty}f_{Y|X}(y|x) dy=1, F_{Y|X}(y|x)=\int_{-\infty}^{y}f_{Y|X}(z|x)dz$，对于任何的$f_X(x) &gt; 0$</p>
-<p>对于$k$维随机向量的条件分布也是同样定义，在此不再赘述。</p>
+        <p>上一篇有一些定理没有给出证明，我先把今天的笔记整理一下。</p>
+<a id="more"></a>
+<p><strong>定义：设$E \subset R^{n}$，$\Gamma$是$R^{n}$中一族开集，若满足$E \subset \bigcup\limits_{G \subset \Gamma}G$，称$\Gamma$是$E$的一个开覆盖。若$\Gamma_1 \subset \Gamma$也是$E$的一个开覆盖，则称$\Gamma_1$是$\Gamma$的子覆盖。</strong></p>
+<p><strong>(Lindeloff定理)$R^{n}$中任何集合的开覆盖必有可数子覆盖。</strong></p>
+<p>证明：设$E \subset R^{n}, \Gamma$是$E$的一个开覆盖。令$H=\{B(x,\frac{1}{k}):x是有理点, k \in N\}$，显然$H$是一个可数集。对$\forall x \in E, \exists G \in \Gamma, s.t. x \in G$，由于$G$是开集，$\exists \delta &gt; 0, s.t. B(x,\delta) \subset G$。取到$k$充分大，使得$\frac{2}{k} &lt; \delta$，由于有理点在$R^{n}$中是稠密的，则存在有理点$y \in E, s.t. |y-x|&lt; \frac{1}{k}$，则有$x \in B(y,\frac{1}{k}) \subset B(x,\delta) \subset G$。事实上，我们有对$\forall z \in B(y,\frac{1}{k}), |z-x| \leq |z-y|+|y-x| &lt; \frac{1}{k}+\frac{1}{k}=\frac{2}{k} &lt; \delta$，故上述包含关系成立。记$H_{0}=\{B:B \in H, \exists G \in \Gamma, s.t. B \subset G\}$，由此$H_{0}$是$H$的子集，则$H_{0}$是可数集。不妨记$H_{0}=\{B_j\}_{j=1}^{N}$，其中$N$要么是无穷大，要么是一个正整数。由$H_{0}$的定义，$\exists G_{j} \in \Gamma, s.t. B_{j} \subset G_{j}$，则我们已经证明了，对于任意的$x \in E$，$x$都会在某个$B_{j}$中，事实上，有$E \subset \bigcup\limits_{j=1}^{N}B_{j} \subset \bigcup\limits_{j=1}^{N}G_{j}$，命题得证。</p>
+<p><strong>(Heine-Borel有限子覆盖定理)$R^{n}$中有界闭集的任何开覆盖必有有限子覆盖</strong></p>
+<p>证明：设$E$是有界闭集，$\Gamma$是$E$的一个开覆盖，由上述定理，不妨设$\Gamma$是由可列个开集构成的覆盖，即$\Gamma=\{G_{j}\}_{j=1}^{\infty}$，则$E \subset \bigcup\limits_{j=1}^{\infty}G_{j}$，对$\forall k \in N$，令$B_{k}=\bigcup\limits_{j=1}^{k}G_{j}, F_{k}=E\backslash B_{k}=E\bigcap B_{k}^{c}$，显然$F_{k}$是闭集。</p>
+<p>(1) 若$\exists k_0 \in N, s.t. F_{k_{0}}=\emptyset$，则$E \subset B_{k_{0}}=\bigcup\limits_{j=1}^{k_{0}}G_{j}$，则此时命题得证。</p>
+<p>(2) 若对$\forall k \in N$都有$F_{k} \neq \emptyset$，注意到此时有$F_1 \supset F_2 \supset F_4 \cdots$，由$Cantor$闭集套定理，$\bigcap\limits_{k=1}^{\infty}F_{k} \neq \emptyset$，取$x_{0} \in \bigcap\limits_{k=1}^{\infty}F_{k}$，则由$F_{k}$的定义，$x_0 \in E$，且对$\forall k \in N, x \notin B_{k}, x \notin \bigcup\limits_{j=1}^{\infty}G_{j}$，则产生矛盾，故这种情况不可能发生。</p>
+<p>上述定理中，注意$E$是有界闭集，这两个条件缺一不可。</p>
+<p>例如：(1) $E = R$，$G_{k}=(-k,k), k \in N$，则显然$E \subset \bigcup\limits_{k=1}^{\infty}G_{k}$，但是没有有限子覆盖，因为$E$是无界的。</p>
+<p>(2) $E = (0,1), G_{k}=(\frac{1}{k},1-\frac{1}{k}), k \in N, k \ge 3$，显然$E \subset \bigcup\limits_{k=1}^{\infty}G_{k}$，但是没有有限子覆盖，因为$E$不是闭集。</p>
+<p><strong>定理：若$E \subset R^{n}$的任何开覆盖都有有限子覆盖，则$E$是有界闭集。</strong></p>
+<p>证明：先证$E$是有界集。记$G_{k}=B(0,k), \forall k \in N$，则$E \subset R^{n} = \bigcup\limits_{k=1}^{\infty}G_{k}$，则$\{G_{k}\}_{k=1}^{\infty}$是$E$的一个开覆盖。则必由有限子覆盖，即$\exists k_0 \in N, s.t. E \subset \bigcup\limits_{j=1}^{k_0}G_{j}=G_{k_0}$，则$E$是有界的。</p>
+<p>下证$E$是闭集，只需证$E^{c}$是开集。因此对于任意的$y \in E^{c}, \forall x \in E, \exists \delta_{x} &gt; 0, s.t. B(x,\delta_{x})\bigcap B(y,\delta_{x})=\emptyset$，显然$\{B(x,\delta_{x}:x \in E)\}$是$E$的一个开覆盖，必有有限子覆盖，记为$\{B(x_{1},\delta_{x_1}),\cdots,B(x_{k},\delta_{x_{k}})\}$，令$\delta=min\{\delta_{x_1},\cdots,\delta_{x_k}\}$，则有$B(y,\delta)\bigcap(\bigcup\limits_{j=1}^{k}B(x_{j},\delta_{x_{j}}))=\bigcup\limits_{j=1}^{k}(B(y,\delta)\bigcap B(x_{j},\delta_{x_{j}}))=\bigcup\limits_{j=1}^{k}(B(y,\delta_{x_{j}})\bigcap B(x_{j},\delta_{x_{j}}))=\emptyset$，因此$B(y,\delta)\bigcap E=\emptyset$，即$B(y,\delta) \subset E^{c}$，故$E$是闭集。</p>
+<p>下面的两个定理是等价的。</p>
+<p>定理：$R^{n}$中有界无穷集必有极限点。</p>
+<p>定理：$R^{n}$中有界列必有收敛子列。</p>
+<p><strong>定义：设$E \subset R^n, f$是定义在$E$上的实值函数，若$x_0 \in E, \forall \epsilon &gt; 0, \exists \delta &gt; 0, s.t.$当$y \in (B(x_0 ,\delta)\bigcap E)$时，有$|f(y)-f(x_0)|&lt; \epsilon$，称$f$在$x_0$处连续。</strong></p>
+<p>若$f$在$E$中的每一点都连续，则称$f$在$E$上连续。</p>
+<p>注：若$f$在$x_0$处连续$\Leftrightarrow$ $\forall \{x_k\}_{k=1}^{\infty} \subset E, 当x_k \rightarrow x_0, (k \rightarrow \infty)时, 有f(x_k) \rightarrow f(x_0)$</p>
+<p>若$E$是有界闭集，且$f$在$E$上连续，则有：</p>
+<p><strong>(1) $f$在$E$上有界。</strong></p>
+<p><strong>(2) $\exists x_0, y_0 \in E,s.t. f(x_0)=\sup\limits_{x \in E} f(x), f(y_0)=\inf\limits_{x \in E} f(x)$</strong></p>
+<p><strong>(3) $f$在$E$上一致连续。即对$\forall \epsilon &gt; 0, \exists \delta &gt; 0$，当$x_1, x_2 \in E$且$|x_1 - x_2| &lt; \delta$时，有$|f(x_1)-f(x_2)| &lt; \epsilon$</strong></p>
+<p>证明：(1)证法一：若$f$是无界的，则对$\forall k \in N, \exists x_k \in E, s.t. |f(x_k)| &gt; k$，由于$\{x_k\}_{k=1}^{\infty} \subset E$是有界的，则必有收敛子列$x_{k_{j}} \rightarrow x_0 \in E$，由$f$的连续性，有$f(x_{k_{j}}) \rightarrow f(x_0)$，即$\lim\limits_{j \rightarrow \infty}|f(x_{k_{j}})| = |f(x_0)|$，又$|f(x_{k_{j}})| &gt; k_{j}$，两边令$j \rightarrow \infty$，有$|f(x_0)| = \infty$，与$f$是一个实值函数矛盾。</p>
+<p>证法二：对$\forall x \in E$，$f$在$x$处连续，取$\epsilon = 1&gt;0, \exists \delta_{x}&gt;0$，当$y \in (B(x,\delta_{x})\bigcap E)$时有，$|f(y)-f(x)| &lt; 1$，由于$\{B(x,\delta_{x}):x \in E\}$是$E$的一个开覆盖，$E$为有界闭集，则必有有限子覆盖$\bigcup\limits_{j=1}^{k}B(x_j, \delta_{x_{j}})$，令$M=\max\limits_{1 \leq j \leq k}|f(x_j)|+2$，$M$总是可以取到的。则对$\forall y \in E, \exists 1 \leq j \leq k, s.t. y \in B(x_{j}, \delta_{x_{j}})$，即$|y-x_{j}| &lt; \delta_{x_{j}}$，有$|f(y)-f(x_{j})| &lt; 1$，利用三角不等式，有$|f(y)| \leq |f(x_j)|+|f(y)-f(x_j)| &lt; |f(x_j)|+1 &lt; M+1$，则$f$是有界的。</p>
+<p>(2) 由上确界$\sup\limits_{x \in E} f(x)$的定义，$\exists x_k \in E, s.t. \forall k \in E, \sup\limits_{x \in E} f(x) - \frac{1}{k} &lt; f(x_k) \leq \sup\limits_{x \in E} f(x)$，由于$\{x_k\}_{k=1}^{\infty} \subset E$是有界的，则必有收敛子列$\{x_{k_j}\}_{j=1}^{\infty}, x_{k_{j}} \rightarrow x_0 \in E$，则有$\sup\limits_{x \in E} f(x) - \frac{1}{k_{j}} &lt; f(x_{k_{j}}) \leq \sup\limits_{x \in E} f(x)$，对其两边同时取极限，根据两边夹定理，有$f(x_{k_j}) \rightarrow \sup\limits_{x \in E} f(x)$，又$f(x_{k_{j}}) \rightarrow f(x_0)$，由极限的唯一性，有$\sup\limits_{x \in E} f(x) = f(x_0)$，且此时$x_0 \in E$。同理可证下确界的情况。</p>
+<p>(3) 反证法，若$f$不一致连续，则$\exists \epsilon_0 &gt; 0, \exists x_k, y_k \in E$，当$|x_k - y_k| &lt; \frac{1}{k}$时，有$|f(x_k)-f(y_k)| \ge \epsilon_0$。对于$\{x_k\}_{k=1}^{\infty} \subset E$是有界的，则存在收敛子列$x_{k_{j}} \rightarrow x_0 \in E$，对于$\{y_k\}_{k=1}^{\infty} \subset E$是有界的，则存在收敛子列$x_{k_{j_{i}}} \rightarrow y_0 \in E$，则$x_{k_{j_{i}}} \rightarrow x_0$。$0 \leq |x_0 - y_0| \leq |x_0 - x_{k_{j_{i}}}| + |x_{k_{j_{i}}} - y_{k_{j_{i}}}| + |y_{k_{j_{i}}} - y_0|$，对两边让$i \rightarrow \infty$，有$|x_0 - y_0|=0$即$x_0 = y_0$，则有$0 = |f(x_0) - f(y_0)| \leftarrow |f(x_{k_{j_{i}}}) - f(y_{k_{j_{i}}})| \ge \epsilon_0$，矛盾。</p>
+<p><strong>定义：可列个闭集的并称为$F_{\sigma}$集；可列个开集的交称为$G_{\delta}$集。</strong></p>
+<p>例如：(1) 闭集显然是一个$F_{\sigma}$集。</p>
+<p>(2) 有理数集$Q$是$F_{\sigma}$集。因为$Q$是可列的，则$Q=\{r_k\}_{k=1}^{\infty}=\bigcup\limits_{k=1}^{\infty}\{r_k\}$</p>
+<p>(3) $(0,1)$是$F_{\sigma}$集。$(0,1)=\bigcup\limits_{k=1}^{\infty}[\frac{1}{k},1-\frac{1}{k}]=\bigcup\limits_{k=1}^{\infty}(\frac{1}{k},1-\frac{1}{k})$</p>
+<p>(4) $[0,1]$是$G_{\delta}$集。$[0,1]=\bigcap\limits_{k=1}^{\infty}(-\frac{1}{k},1+\frac{1}{k})$</p>
+<p>并且不难看出：$F_{\sigma}^{c}=G_{\delta}, G_{\delta}^{c}=F_{\sigma}$</p>
+<p><strong>定义：设$X \neq \emptyset, \Gamma \subset \mathcal{P}(X)$，并且满足以下三点：</strong></p>
+<ul>
+<li><p>$\emptyset \in \Gamma$</p>
+</li>
+<li><p>若$A \in \Gamma, 则A^{c} \in \Gamma$</p>
+</li>
+<li><p>若$A_k \in \Gamma, \forall k \in N$，有$\bigcup\limits_{k=1}^{\infty}A_k \in \Gamma$</p>
+</li>
+</ul>
+<p><strong>则称$\Gamma$是一个$\sigma -$代数</strong></p>
+<p>例如：$\Gamma_{0}=\{\emptyset, X\}, \Gamma_{1}=\mathcal{P}(x)$都是平凡的$\sigma -$代数。</p>
 
       
     </div>
@@ -419,7 +456,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/概率论，数学/" rel="tag"># 概率论，数学</a>
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/实变函数/" rel="tag"># 实变函数</a>
           
         </div>
       
@@ -432,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/24/概率论笔记-五/" rel="next" title="概率论笔记(五)">
-                <i class="fa fa-chevron-left"></i> 概率论笔记(五)
+              <a href="/2018/03/26/实变函数笔记-二/" rel="next" title="实变函数笔记(二)">
+                <i class="fa fa-chevron-left"></i> 实变函数笔记(二)
               </a>
             
           </div>
@@ -441,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/26/实变函数笔记-二/" rel="prev" title="实变函数笔记(二)">
-                实变函数笔记(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,17 +531,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,22 +606,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#离散型条件分布"><span class="nav-number">1.</span> <span class="nav-text">离散型条件分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续型条件分布"><span class="nav-number">2.</span> <span class="nav-text">连续型条件分布</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
